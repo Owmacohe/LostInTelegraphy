@@ -20,6 +20,13 @@ public class ScreenShift : MonoBehaviour
             int i;
             for (i = 0; i < 16; i++)
             {
+                /*
+               if (message != null)
+               {
+                    message.transform.Translate(1, 0, 0);
+               }
+               */
+
                 cam.transform.Translate(1, 0, 0);
                 yield return new WaitForSeconds(speed);
             }
@@ -29,6 +36,13 @@ public class ScreenShift : MonoBehaviour
             int j;
             for (j = 0; j < 16; j++)
             {
+                /*
+                if (message != null)
+                {
+                    message.transform.Translate(-1, 0, 0);
+                }
+                */
+
                 cam.transform.Translate(-1, 0, 0);
                 yield return new WaitForSeconds(speed);
             }
