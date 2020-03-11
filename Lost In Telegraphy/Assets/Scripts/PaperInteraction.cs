@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class PaperInteraction : MonoBehaviour
 {
+    public static bool acknowledged = false;
+
     private bool paperSelected = false;
 
     private void OnMouseDown()
     {
-        this.GetComponent<SpriteRenderer>().sortingOrder = 3;
+        this.GetComponent<SpriteRenderer>().sortingOrder = 4;
+        acknowledged = true;
 
-        //This loop is supposed to rotate the paper slowly when first clicked, but they don't. Yet.
-        float i;
-        for (i = this.transform.rotation.eulerAngles.z; i > 0; i--)
+        if (this.transform.rotation.eulerAngles.z != 0)
         {
-            this.transform.transform.rotation = new Quaternion(0, 0, i, 0);
-            StartCoroutine(wait(0.5f));
+            this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (this.transform.rotation.eulerAngles.z == 180)
+        if (paperSelected == false)
         {
-            if (paperSelected == false)
-            {
-                paperSelected = true;
-            }
-            else
-            {
-                paperSelected = false;
-            }
+            paperSelected = true;
+        }
+        else
+        {
+            paperSelected = false;
         }
     }
 
@@ -49,6 +46,22 @@ public class PaperInteraction : MonoBehaviour
         else
         {
             return;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PaperSlot"))
+        {
+            MessageCirculation.tabSet("send", "down");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PaperSlot"))
+        {
+            MessageCirculation.tabSet("send", "up");
         }
     }
 }

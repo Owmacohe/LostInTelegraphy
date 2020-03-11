@@ -16,12 +16,26 @@ public class MessageCirculation : MonoBehaviour
     public Sprite paper4;
     public Sprite paper5;
 
+    public GameObject sendInput;
+    public static GameObject sendTab;
+    public GameObject sentInput;
+    public static GameObject sentTab;
+
+    public static GameObject instMessage;
+    public static Sprite instMessageSprite;
+
+    public static string sendDirection;
+    public static string sentDirection;
+
     void Start()
     {
         newMessage();
+
+        sendTab = sendInput;
+        sentTab = sentInput;
     }
 
-    void newMessage()
+    public void newMessage()
     {
         StartCoroutine(slideShadow(2));
     }
@@ -53,44 +67,121 @@ public class MessageCirculation : MonoBehaviour
 
     IEnumerator slideMessage()
     {
-        GameObject newMessage = Instantiate(message, new Vector2(instantiator.transform.position.x, instantiator.transform.position.y), Quaternion.Euler(0, 0, 90));
+        instMessage = Instantiate(message, new Vector2(instantiator.transform.position.x, instantiator.transform.position.y), Quaternion.Euler(0, 0, 90));
 
         int paperNum = Random.Range(1, 5);
         switch (paperNum)
         {
             case 1:
                 {
-                    newMessage.GetComponent<SpriteRenderer>().sprite = paper1;
+                    instMessage.GetComponent<SpriteRenderer>().sprite = paper1;
                     break;
                 }
             case 2:
                 {
-                    newMessage.GetComponent<SpriteRenderer>().sprite = paper2;
+                    instMessage.GetComponent<SpriteRenderer>().sprite = paper2;
                     break;
                 }
             case 3:
                 {
-                    newMessage.GetComponent<SpriteRenderer>().sprite = paper3;
+                    instMessage.GetComponent<SpriteRenderer>().sprite = paper3;
                     break;
                 }
             case 4:
                 {
-                    newMessage.GetComponent<SpriteRenderer>().sprite = paper4;
+                    instMessage.GetComponent<SpriteRenderer>().sprite = paper4;
                     break;
                 }
             case 5:
                 {
-                    newMessage.GetComponent<SpriteRenderer>().sprite = paper5;
+                    instMessage.GetComponent<SpriteRenderer>().sprite = paper5;
                     break;
                 }
         }
 
+        instMessageSprite = instMessage.GetComponent<SpriteRenderer>().sprite;
+
         float i;
         for (i = instantiator.transform.position.y; i > 0.5; i = (i - 0.3f))
         {
-            newMessage.transform.Translate(-0.5f, 0, 0);
-            newMessage.transform.Rotate(0, 0, Random.Range(-10, 10));
+            instMessage.transform.Translate(-0.5f, 0, 0);
+            instMessage.transform.Rotate(0, 0, Random.Range(-10, 10));
             yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    void tabsSlide(string tab, string direction)
+    {
+        /*
+        if (tab == "send")
+        {
+            if (direction == "up")
+            {
+                sendTab.transform.position = new Vector3(sendTab.transform.position.x, sendTab.transform.position.y + 1.6f, sendTab.transform.position.z);
+            }
+            else if (direction == "down")
+            {
+                sendTab.transform.position = new Vector3(sendTab.transform.position.x, sendTab.transform.position.y - 1.6f, sendTab.transform.position.z);
+            }
+        }
+        else if (tab == "sent")
+        {
+            if (direction == "up")
+            {
+                sentTab.transform.position = new Vector3(sentTab.transform.position.x, sentTab.transform.position.y + 1.4f, sentTab.transform.position.z);
+            }
+            else if (direction == "down")
+            {
+                sentTab.transform.position = new Vector3(sentTab.transform.position.x, sentTab.transform.position.y - 1.4f, sentTab.transform.position.z);
+            }
+        }
+        */    }
+
+    private void Update()
+    {
+        if (sendDirection == "up" && sendTab.transform.position.y < 5.6)
+        {
+            sendTab.transform.position = new Vector3(sendTab.transform.position.x, sendTab.transform.position.y + 1.6f, sendTab.transform.position.z);
+        }
+        else if (sendDirection == "down" && sendTab.transform.position.y > 4.4)
+        {
+            sendTab.transform.position = new Vector3(sendTab.transform.position.x, sendTab.transform.position.y - 1.6f, sendTab.transform.position.z);
+        }
+        if (sentDirection == "up" && sentTab.transform.position.y < 5.6)
+        {
+            sentTab.transform.position = new Vector3(sentTab.transform.position.x, sentTab.transform.position.y + 1.4f, sentTab.transform.position.z);
+
+            newMessage();
+        }
+        else if (sentDirection == "down" && sentTab.transform.position.y > 4.4)
+        {
+            sentTab.transform.position = new Vector3(sentTab.transform.position.x, sentTab.transform.position.y - 1.4f, sentTab.transform.position.z);
+        }
+    }
+
+    public static void tabSet(string tab, string direction)
+    {
+        if (tab == "send")
+        {
+            if (direction == "up")
+            {
+                sendDirection = "up";
+            }
+            else if (direction == "down")
+            {
+                sendDirection = "down";
+            }
+        }
+        else if (tab == "sent")
+        {
+            if (direction == "up")
+            {
+                sentDirection = "up";
+            }
+            else if (direction == "down")
+            {
+                sentDirection = "down";
+            }
         }
     }
 }
