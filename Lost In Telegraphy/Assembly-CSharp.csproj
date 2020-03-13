@@ -65,10 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MenuButton.cs" />
     <Compile Include="Assets\Scripts\MessageCirculation.cs" />
-    <Compile Include="Assets\Scripts\PaperInteraction.cs" />
+    <Compile Include="Assets\Scripts\PaperInteractionIn.cs" />
+    <Compile Include="Assets\Scripts\PaperInteractionOut.cs" />
     <Compile Include="Assets\Scripts\ScreenShift.cs" />
     <Compile Include="Assets\Scripts\SlotCheck.cs" />
     <Compile Include="Assets\Scripts\TabClick.cs" />
+    <Compile Include="Assets\Scripts\WordInteraction.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Owen Hellum/Documents/GitHub/LostInTelegraphy/Lost In Telegraphy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -9,6 +9,7 @@ public class TabClick : MonoBehaviour
         MessageCirculation.tabSet("sent", "down");
         MessageCirculation.tabSet("send", "up");
 
+        Destroy(MessageCirculation.instPaperOut, 0.5f);
         Destroy(MessageCirculation.instMessage, 0.5f);
     }
 }

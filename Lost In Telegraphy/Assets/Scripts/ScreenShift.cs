@@ -24,17 +24,17 @@ public class ScreenShift : MonoBehaviour
     {
         if (direction == "right")
         {
-            if (MessageCirculation.instMessage != null && PaperInteraction.acknowledged != false)
+            if (MessageCirculation.instPaperOut != null)
             {
-                MessageCirculation.instMessage.GetComponent<SpriteRenderer>().sprite = flippedPaper;
+                MessageCirculation.instPaperOut.GetComponent<SpriteRenderer>().sprite = flippedPaper;
             }
 
             int i;
             for (i = 0; i < 16; i++)
             {
-                if (MessageCirculation.instMessage != null && PaperInteraction.acknowledged != false)
+                if (MessageCirculation.instPaperOut != null)
                 {
-                    MessageCirculation.instMessage.transform.Translate(1, 0, 0);
+                    MessageCirculation.instPaperOut.transform.Translate(1, 0, 0);
                 }
 
                 cam.transform.Translate(1, 0, 0);
@@ -43,17 +43,17 @@ public class ScreenShift : MonoBehaviour
         }
         else if (direction == "left")
         {
-            if (MessageCirculation.instMessage != null)
+            if (MessageCirculation.instPaperOut != null)
             {
-                MessageCirculation.instMessage.GetComponent<SpriteRenderer>().sprite = MessageCirculation.instMessageSprite;
+                MessageCirculation.instPaperOut.GetComponent<SpriteRenderer>().sprite = MessageCirculation.instPaperOutSprite;
             }
 
             int j;
             for (j = 0; j < 16; j++)
             {
-                if (MessageCirculation.instMessage != null && PaperInteraction.acknowledged != false)
+                if (MessageCirculation.instPaperOut != null)
                 {
-                    MessageCirculation.instMessage.transform.Translate(-1, 0, 0);
+                    MessageCirculation.instPaperOut.transform.Translate(-1, 0, 0);
                 }
 
                 cam.transform.Translate(-1, 0, 0);
