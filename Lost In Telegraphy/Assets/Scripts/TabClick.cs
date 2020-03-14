@@ -11,5 +11,13 @@ public class TabClick : MonoBehaviour
 
         Destroy(MessageCirculation.instPaperOut, 0.5f);
         Destroy(MessageCirculation.instMessage, 0.5f);
+
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
+
+        int i;
+        for (i = 0; i < blocks.Length; i++)
+        {
+            Destroy(blocks[i], 0.5f);
+        }
     }
 }

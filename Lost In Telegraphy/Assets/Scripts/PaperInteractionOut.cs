@@ -6,6 +6,8 @@ public class PaperInteractionOut : MonoBehaviour
 {
     private bool paperSelected = false;
 
+    public static List<GameObject> attatchedBlocks = new List<GameObject>();
+
     private void Start()
     {
         StartCoroutine(paperOutSlide());
@@ -13,7 +15,7 @@ public class PaperInteractionOut : MonoBehaviour
 
     private void OnMouseDown()
     {
-        this.GetComponent<SpriteRenderer>().sortingOrder = 4;
+        this.GetComponent<SpriteRenderer>().sortingOrder = 6;
 
         if (paperSelected == false)
         {
@@ -41,22 +43,6 @@ public class PaperInteractionOut : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PaperSlot"))
-        {
-            MessageCirculation.tabSet("send", "down");
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PaperSlot"))
-        {
-            MessageCirculation.tabSet("send", "up");
-        }
-    }
-
     IEnumerator paperOutSlide()
     {
         float i;
@@ -67,5 +53,38 @@ public class PaperInteractionOut : MonoBehaviour
         }
 
         this.GetComponent<SpriteRenderer>().sortingOrder = 4;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PaperSlot")/* && WordInteraction.wordSet == MessageCirculation.blockNum*/)
+        {
+            MessageCirculation.tabSet("send", "down");
+        }
+
+        if (collision.CompareTag("WordBlock"))
+        {
+            attatchedBlocks.Add(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PaperSlot"))
+        {
+            MessageCirculation.tabSet("send", "up");
+        }
+
+        if (collision.CompareTag("WordBlock"))
+        {
+            int i;
+            for (i = 0; i < attatchedBlocks.Count; i ++)
+            {
+                if (attatchedBlocks[i] == collision.gameObject)
+                {
+                    attatchedBlocks.Remove(attatchedBlocks[i]);
+                }
+            }
+        }
     }
 }

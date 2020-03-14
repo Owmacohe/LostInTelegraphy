@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8420862817552434241}
   - component: {fileID: 8420862817552434271}
   - component: {fileID: 8420862817552434242}
-  - component: {fileID: 8420862817552434240}
+  - component: {fileID: 7122593457711954434}
   - component: {fileID: 3980269448064844042}
   m_Layer: 0
   m_Name: Word block
-  m_TagString: Untagged
+  m_TagString: WordBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8420862817552434240
+--- !u!61 &7122593457711954434
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,14 +122,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.03, y: 0.03}
+    oldSize: {x: 0.02, y: 0.02}
     newSize: {x: 0.03, y: 0.03}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.03}
+  m_Size: {x: 0.02, y: 0.02}
   m_EdgeRadius: 0
 --- !u!114 &3980269448064844042
 MonoBehaviour:
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634b93f59d2d46749bf5d5ea5bd2b4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordBlockSprite: {fileID: 21300000, guid: f8befe1469e57ce42b93feaa5ecda06a, type: 3}

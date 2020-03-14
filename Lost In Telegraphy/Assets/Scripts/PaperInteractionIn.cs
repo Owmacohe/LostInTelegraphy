@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PaperInteractionIn : MonoBehaviour
@@ -8,11 +9,23 @@ public class PaperInteractionIn : MonoBehaviour
 
     private bool paperSelected = false;
 
+    private int blockSpawn;
+
+    private void Start()
+    {
+        blockSpawn = MessageCirculation.blockNum;
+
+        this.GetComponentInChildren<MeshRenderer>().sortingOrder = 5;
+
+        int rand = Random.Range(0, COMSmessages.casualMessages.Length);
+        this.GetComponentInChildren<TextMeshPro>().text = COMSmessages.casualMessages[rand];
+    }
+
     private void OnMouseDown()
     {
         if (acknowledged == false)
         {
-            MessageCirculation.addBlocks(5);
+            MessageCirculation.addBlocks(blockSpawn);
             MessageCirculation.addPaperOut();
         }
 

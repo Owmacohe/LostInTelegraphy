@@ -12,18 +12,47 @@ public class ScreenShift : MonoBehaviour
 
     private void OnMouseDown()
     {
-        StartCoroutine(slider());
-
         if (MessageCirculation.sentTab.transform.position.y < 5.6)
         {
             MessageCirculation.tabSet("sent", "up");
         }
+
+        if (WordInteraction.shiftedScreens == false)
+        {
+            WordInteraction.shiftedScreens = true;
+        }
+        else if (WordInteraction.shiftedScreens == true)
+        {
+            WordInteraction.shiftedScreens = false;
+        }
+
+        StartCoroutine(slider());
     }
 
     IEnumerator slider()
     {
         if (direction == "right")
         {
+            if (/*WordInteraction.wordSet == MessageCirculation.blockNum && */WordInteraction.outPaper != null)
+            {
+                GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
+
+                int k;
+                for (k = 0; k < blocks.Length; k++)
+                {
+                    int m;
+                    for (m = 0; m < PaperInteractionOut.attatchedBlocks.Count; m++)
+                    {
+                        if (blocks[k] == PaperInteractionOut.attatchedBlocks[m])
+                        {
+                            blocks[k].transform.parent = WordInteraction.outPaper.transform;
+
+                            blocks[k].GetComponent<SpriteRenderer>().enabled = false;
+                        }
+                    }
+                }
+            }
+
             if (MessageCirculation.instPaperOut != null)
             {
                 MessageCirculation.instPaperOut.GetComponent<SpriteRenderer>().sprite = flippedPaper;
@@ -43,6 +72,14 @@ public class ScreenShift : MonoBehaviour
         }
         else if (direction == "left")
         {
+            GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
+
+            int l;
+            for (l = 0; l < blocks.Length; l++)
+            {
+                blocks[l].GetComponent<SpriteRenderer>().enabled = true;
+            }
+
             if (MessageCirculation.instPaperOut != null)
             {
                 MessageCirculation.instPaperOut.GetComponent<SpriteRenderer>().sprite = MessageCirculation.instPaperOutSprite;
@@ -58,6 +95,11 @@ public class ScreenShift : MonoBehaviour
 
                 cam.transform.Translate(-1, 0, 0);
                 yield return new WaitForSeconds(speed);
+            }
+
+            if (WordInteraction.outPaper != null)
+            {
+                WordInteraction.outPaper.transform.DetachChildren();
             }
         }
     }

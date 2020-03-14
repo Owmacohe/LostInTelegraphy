@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PaperSlot
+  - MessageOut
+  - WordBlock
   layers:
   - Default
   - TransparentFX

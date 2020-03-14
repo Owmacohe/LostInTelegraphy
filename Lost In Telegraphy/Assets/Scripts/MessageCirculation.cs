@@ -39,6 +39,9 @@ public class MessageCirculation : MonoBehaviour
     public GameObject paperOutInput;
     public static GameObject paperOut;
 
+    public int blockNumInput;
+    public static int blockNum;
+
     void Start()
     {
         newMessage();
@@ -50,6 +53,8 @@ public class MessageCirculation : MonoBehaviour
         block = blockInput;
 
         paperOut = paperOutInput;
+
+        blockNum = blockNumInput;
     }
 
     public void newMessage()
