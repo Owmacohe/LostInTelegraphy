@@ -9,7 +9,9 @@ public class COMSmessages : MonoBehaviour
     public static string[] casualMessages = new string[] {
         "Remember to buy apples when you're out.",
         "Can you send me a list of your favourite songs?",
-        "Please come see me in my office this Tuesday",
-        "When will you be visiting next?"
+        "Please come see me in my office this Tuesday.",
+        "When will you be visiting next?",
+        "I hope you and your family are doing well.",
+        "How can I contact your work?"
     };
 }

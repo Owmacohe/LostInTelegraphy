@@ -48,6 +48,7 @@ public class ScreenShift : MonoBehaviour
                             blocks[k].transform.parent = WordInteraction.outPaper.transform;
 
                             blocks[k].GetComponent<SpriteRenderer>().enabled = false;
+                            blocks[k].GetComponentInChildren<MeshRenderer>().enabled = false;
                         }
                     }
                 }
@@ -78,6 +79,7 @@ public class ScreenShift : MonoBehaviour
             for (l = 0; l < blocks.Length; l++)
             {
                 blocks[l].GetComponent<SpriteRenderer>().enabled = true;
+                blocks[l].GetComponentInChildren<MeshRenderer>().enabled = true;
             }
 
             if (MessageCirculation.instPaperOut != null)

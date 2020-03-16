@@ -7,25 +7,31 @@ public class PaperInteractionIn : MonoBehaviour
 {
     public static bool acknowledged = false;
 
+    public static TextMeshPro messageText;
+
+    public static string sentence;
+    public static string[] parts;
+
     private bool paperSelected = false;
 
-    private int blockSpawn;
 
     private void Start()
     {
-        blockSpawn = MessageCirculation.blockNum;
-
         this.GetComponentInChildren<MeshRenderer>().sortingOrder = 5;
 
+        messageText = this.GetComponentInChildren<TextMeshPro>();
         int rand = Random.Range(0, COMSmessages.casualMessages.Length);
-        this.GetComponentInChildren<TextMeshPro>().text = COMSmessages.casualMessages[rand];
+        messageText.text = COMSmessages.casualMessages[rand];
+
+        sentence = messageText.text;
+        parts = sentence.Split(' ');
     }
 
     private void OnMouseDown()
     {
         if (acknowledged == false)
         {
-            MessageCirculation.addBlocks(blockSpawn);
+            MessageCirculation.addBlocks(parts.Length);
             MessageCirculation.addPaperOut();
         }
 

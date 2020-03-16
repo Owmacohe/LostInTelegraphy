@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MessageCirculation : MonoBehaviour
@@ -39,9 +40,6 @@ public class MessageCirculation : MonoBehaviour
     public GameObject paperOutInput;
     public static GameObject paperOut;
 
-    public int blockNumInput;
-    public static int blockNum;
-
     void Start()
     {
         newMessage();
@@ -53,8 +51,6 @@ public class MessageCirculation : MonoBehaviour
         block = blockInput;
 
         paperOut = paperOutInput;
-
-        blockNum = blockNumInput;
     }
 
     public void newMessage()
@@ -181,14 +177,18 @@ public class MessageCirculation : MonoBehaviour
         }
     }
 
-    public static void addBlocks(int blockNum)
+    public static void addBlocks(int addNum)
     {
         int i;
-        for (i = 0; i < blockNum; i++)
+        for (i = 0; i < addNum; i++)
         {
             float rand = Random.Range(-4.8f, 0f);
 
+            block.GetComponentInChildren<TextMeshPro>().text = PaperInteractionIn.parts[i];
+
             Instantiate(block, new Vector2(rand, blockInstantiator.transform.position.y), Quaternion.identity);
+
+            //Debug.Log(i + ": " + PaperInteractionIn.parts[i]);
         }
     }
 

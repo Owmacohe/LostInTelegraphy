@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WordInteraction : MonoBehaviour
@@ -16,7 +17,11 @@ public class WordInteraction : MonoBehaviour
 
     public static GameObject outPaper;
 
-    public Sprite wordBlockSprite;
+    public Sprite block1;
+    public Sprite block2;
+    public Sprite block3;
+    public Sprite block4;
+    private Sprite wordBlockSprite;
 
     private void Start()
     {
@@ -27,6 +32,31 @@ public class WordInteraction : MonoBehaviour
         block = this.gameObject;
 
         outPaper = MessageCirculation.instPaperOut;
+
+        this.GetComponentInChildren<MeshRenderer>().sortingOrder = 3;
+
+        if (this.GetComponentInChildren<TextMeshPro>().text.Length <= 1)
+        {
+            wordBlockSprite = block1;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.02f, 0.02f);
+        }
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 1 && this.GetComponentInChildren<TextMeshPro>().text.Length <= 3)
+        {
+            wordBlockSprite = block2;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.04f, 0.02f);
+        }
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 3 && this.GetComponentInChildren<TextMeshPro>().text.Length <= 5)
+        {
+            wordBlockSprite = block3;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.06f, 0.02f);
+        }
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 5)
+        {
+            wordBlockSprite = block4;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.08f, 0.02f);
+        }
+
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = wordBlockSprite;
     }
 
     private void OnMouseDown()
@@ -76,6 +106,7 @@ public class WordInteraction : MonoBehaviour
         }
 
         this.GetComponent<SpriteRenderer>().sortingOrder = 7;
+        this.GetComponentInChildren<MeshRenderer>().sortingOrder = 8;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
