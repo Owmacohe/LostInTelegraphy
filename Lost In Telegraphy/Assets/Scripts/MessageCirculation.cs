@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ Game made by: Owen Hellum @ Concordia University
+ Project for my COMS 360 and LING 300 classes
+
+ Check out the documentation here: https://bit.ly/LostInTelegraphy
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -11,11 +18,14 @@ public class MessageCirculation : MonoBehaviour
     public GameObject messageInstantiator;
     public GameObject message;
 
+    //Random paper sprites that can be assigned
     public Sprite paper1;
     public Sprite paper2;
     public Sprite paper3;
     public Sprite paper4;
     public Sprite paper5;
+
+    //Editor inputs for ststic variables
 
     public GameObject sendInput;
     public static GameObject sendTab;
@@ -40,9 +50,15 @@ public class MessageCirculation : MonoBehaviour
     public GameObject paperOutInput;
     public static GameObject paperOut;
 
+    //Seriousness level
+    public static int messageCount = 1;
+
     void Start()
     {
+        //Starts the cycle
         newMessage();
+
+        //Setting all of the static variables equal to their values given in the editor
 
         sendTab = sendInput;
         sentTab = sentInput;
@@ -53,11 +69,12 @@ public class MessageCirculation : MonoBehaviour
         paperOut = paperOutInput;
     }
 
-    public void newMessage()
+    private void newMessage()
     {
         StartCoroutine(slideShadow(2));
     }
 
+    //Cosmetic IEnumerator for making the person's shadow slide in, stop, then slide out
     IEnumerator slideShadow(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -83,6 +100,7 @@ public class MessageCirculation : MonoBehaviour
         shadow.transform.position = new Vector2(-10.2f, shadow.transform.position.y);
     }
 
+    //Creates in the in message, gives it one of 5 sprites, and slides it down the typing dessk
     IEnumerator slideMessage()
     {
         instMessage = Instantiate(message, new Vector2(messageInstantiator.transform.position.x, messageInstantiator.transform.position.y), Quaternion.Euler(0, 0, 90));
@@ -128,6 +146,7 @@ public class MessageCirculation : MonoBehaviour
         }
     }
 
+    //Checking to see which tabs are up and down, and setting them according to parameters
     private void Update()
     {
         if (sendDirection == "up" && sendTab.transform.position.y < 5.6)
@@ -142,6 +161,7 @@ public class MessageCirculation : MonoBehaviour
         {
             sentTab.transform.position = new Vector3(sentTab.transform.position.x, sentTab.transform.position.y + 1.4f, sentTab.transform.position.z);
 
+            //Starts the process again when the sent tab pops back up (when the screen shifts back)
             PaperInteractionIn.acknowledged = false;
             newMessage();
         }
@@ -182,16 +202,48 @@ public class MessageCirculation : MonoBehaviour
         int i;
         for (i = 0; i < addNum; i++)
         {
-            float rand = Random.Range(-4.8f, 0f);
-
+            //Instantiates all the block words of the words in the incoming message
             block.GetComponentInChildren<TextMeshPro>().text = PaperInteractionIn.parts[i];
 
-            Instantiate(block, new Vector2(rand, blockInstantiator.transform.position.y), Quaternion.identity);
+            Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
 
             //Debug.Log(i + ": " + PaperInteractionIn.parts[i]);
+
+            int j;
+            for (j = 0; j < (PaperMessages.synonyms.Length / 7); j++)
+            {
+                if (block.GetComponentInChildren<TextMeshPro>().text == PaperMessages.synonyms[j, 0])
+                {
+                    //Debug.Log("found synonym for: " + block.GetComponentInChildren<TextMeshPro>().text);
+
+                    addSynonyms(j);
+                }
+            }
         }
     }
 
+    //Adds a random number of synonyms pertaining to a select few words in the message
+    public static void addSynonyms(int wordSelection)
+    {
+        block.GetComponentInChildren<TextMeshPro>().text = PaperMessages.synonyms[wordSelection, Random.Range(1, 7)];
+
+        Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
+
+        //Debug.Log("added synonym: " + COMSmessages.synonyms[wordSelection, rand]);
+    }
+
+    public static void addRandomBlocks(int addNum)
+    {
+        int i;
+        for (i = 0; i < addNum; i++)
+        {
+            block.GetComponentInChildren<TextMeshPro>().text = PaperMessages.getRandomWord();
+
+            Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
+        }
+    }
+
+    //Adds and assigns the the sprite of the outgoing message
     public static void addPaperOut()
     {
         instPaperOut = Instantiate(paperOut, new Vector2(6.5f, -3.2f), Quaternion.identity);

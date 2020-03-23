@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ Game made by: Owen Hellum @ Concordia University
+ Project for my COMS 360 and LING 300 classes
+
+ Check out the documentation here: https://bit.ly/LostInTelegraphy
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,6 +40,7 @@ public class ScreenShift : MonoBehaviour
     {
         if (direction == "right")
         {
+            //Gets all of the available word blocks, checks which ones are colliding with the out paper, and attatches those
             if (/*WordInteraction.wordSet == MessageCirculation.blockNum && */WordInteraction.outPaper != null)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
@@ -47,12 +55,15 @@ public class ScreenShift : MonoBehaviour
                         {
                             blocks[k].transform.parent = WordInteraction.outPaper.transform;
 
+                            //Makes the blocks and their text invisiable when switching screens
                             blocks[k].GetComponent<SpriteRenderer>().enabled = false;
                             blocks[k].GetComponentInChildren<MeshRenderer>().enabled = false;
                         }
                     }
                 }
             }
+
+            //Changes the paper sprite to it's flipped equivalent when changing the screen nad slides it
 
             if (MessageCirculation.instPaperOut != null)
             {
@@ -73,6 +84,13 @@ public class ScreenShift : MonoBehaviour
         }
         else if (direction == "left")
         {
+            //Changes the paper and block sprites back and slides them
+
+            if (MessageCirculation.instPaperOut != null)
+            {
+                MessageCirculation.instPaperOut.GetComponent<SpriteRenderer>().sprite = MessageCirculation.instPaperOutSprite;
+            }
+
             GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
 
             int l;
@@ -80,11 +98,6 @@ public class ScreenShift : MonoBehaviour
             {
                 blocks[l].GetComponent<SpriteRenderer>().enabled = true;
                 blocks[l].GetComponentInChildren<MeshRenderer>().enabled = true;
-            }
-
-            if (MessageCirculation.instPaperOut != null)
-            {
-                MessageCirculation.instPaperOut.GetComponent<SpriteRenderer>().sprite = MessageCirculation.instPaperOutSprite;
             }
 
             int j;
@@ -98,6 +111,8 @@ public class ScreenShift : MonoBehaviour
                 cam.transform.Translate(-1, 0, 0);
                 yield return new WaitForSeconds(speed);
             }
+
+            //Detatches all blocks
 
             if (WordInteraction.outPaper != null)
             {

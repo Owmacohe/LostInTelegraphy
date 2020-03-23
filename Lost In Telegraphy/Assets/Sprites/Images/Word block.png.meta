@@ -4,19 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3226831895422724538
-    second: Word_block_1
+    second: Word block_0
   - first:
       213: 9060536939926154218
-    second: Word_block_2
+    second: Word block_1
   - first:
       213: -7122703986234351451
-    second: Word_block_4
+    second: Word block_2
   - first:
       213: -6192766498267779339
-    second: Word_block_3
+    second: Word block_3
   - first:
       213: 6364626718956003648
     second: Word block_4
+  - first:
+      213: 2020539197254527967
+    second: Word block_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -137,15 +140,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Word_block_1
+      name: Word block_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 4
+        y: 1
         width: 2
         height: 2
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,15 +161,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Word_block_2
+      name: Word block_1
       rect:
         serializedVersion: 2
         x: 4
-        y: 4
+        y: 1
         width: 4
         height: 2
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,15 +182,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Word_block_4
+      name: Word block_2
       rect:
         serializedVersion: 2
-        x: 1
+        x: 9
         y: 1
-        width: 8
+        width: 6
         height: 2
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,15 +203,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Word_block_3
+      name: Word block_3
       rect:
         serializedVersion: 2
-        x: 9
-        y: 4
-        width: 6
+        x: 16
+        y: 1
+        width: 8
         height: 2
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,6 +219,27 @@ TextureImporter:
       bones: []
       spriteID: 5fe2fc53eafde0aa0800000000000000
       internalID: -6192766498267779339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Word block_4
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1
+        width: 10
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04125579742b35850800000000000000
+      internalID: 6364626718956003648
       vertices: []
       indices: 
       edges: []

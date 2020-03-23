@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ Game made by: Owen Hellum @ Concordia University
+ Project for my COMS 360 and LING 300 classes
+
+ Check out the documentation here: https://bit.ly/LostInTelegraphy
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

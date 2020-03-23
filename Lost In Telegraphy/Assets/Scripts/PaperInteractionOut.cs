@@ -1,10 +1,17 @@
-﻿using System.Collections;
+﻿/*
+ Game made by: Owen Hellum @ Concordia University
+ Project for my COMS 360 and LING 300 classes
+
+ Check out the documentation here: https://bit.ly/LostInTelegraphy
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PaperInteractionOut : MonoBehaviour
 {
-    private bool paperSelected = false;
+    //private bool paperSelected = false;
 
     public static List<GameObject> attatchedBlocks = new List<GameObject>();
 
@@ -17,16 +24,25 @@ public class PaperInteractionOut : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().sortingOrder = 6;
 
+        /*
         if (paperSelected == false)
         {
             paperSelected = true;
         }
-        else
+        */
+    }
+
+    /*
+    private void OnMouseUp()
+    {
+        if (paperSelected == true)
         {
             paperSelected = false;
         }
     }
+    */
 
+    /*
     private void Update()
     {
         Vector3 mouse = Input.mousePosition;
@@ -42,7 +58,9 @@ public class PaperInteractionOut : MonoBehaviour
             return;
         }
     }
+    */
 
+    //Cosmetic IEnumerator for sliding the outgoing message out
     IEnumerator paperOutSlide()
     {
         float i;
@@ -55,6 +73,7 @@ public class PaperInteractionOut : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sortingOrder = 4;
     }
 
+    //Triggering the tab dropdown
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PaperSlot")/* && WordInteraction.wordSet == MessageCirculation.blockNum*/)

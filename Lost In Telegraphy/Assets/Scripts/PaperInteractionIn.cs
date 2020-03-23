@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ Game made by: Owen Hellum @ Concordia University
+ Project for my COMS 360 and LING 300 classes
+
+ Check out the documentation here: https://bit.ly/LostInTelegraphy
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,30 +14,50 @@ public class PaperInteractionIn : MonoBehaviour
 {
     public static bool acknowledged = false;
 
+    //Variables for breaking the sentence down into individual words
     public static TextMeshPro messageText;
-
     public static string sentence;
     public static string[] parts;
 
     private bool paperSelected = false;
 
-
     private void Start()
     {
         this.GetComponentInChildren<MeshRenderer>().sortingOrder = 5;
 
+        int randomMessage;
         messageText = this.GetComponentInChildren<TextMeshPro>();
-        int rand = Random.Range(0, COMSmessages.casualMessages.Length);
-        messageText.text = COMSmessages.casualMessages[rand];
+
+        //Determines what kind of message will be outputted: casual, serious, or dire
+        if (MessageCirculation.messageCount >= 1 && MessageCirculation.messageCount < 5)
+        {
+            randomMessage = Random.Range(0, PaperMessages.casualMessages.Length);
+            messageText.text = PaperMessages.casualMessages[randomMessage];
+        }
+        else if (MessageCirculation.messageCount >= 5 && MessageCirculation.messageCount < 9)
+        {
+            randomMessage = Random.Range(0, PaperMessages.seriousMessages.Length);
+            messageText.text = PaperMessages.seriousMessages[randomMessage];
+        }
+        else if (MessageCirculation.messageCount >= 9)
+        {
+            randomMessage = Random.Range(0, PaperMessages.direMessages.Length);
+            messageText.text = PaperMessages.direMessages[randomMessage];
+        }
 
         sentence = messageText.text;
         parts = sentence.Split(' ');
+
+        MessageCirculation.messageCount++;
     }
 
+    //For how the paper itself is dragged around
     private void OnMouseDown()
     {
         if (acknowledged == false)
         {
+            MessageCirculation.addRandomBlocks(Random.Range(0, (parts.Length / 2)));
+
             MessageCirculation.addBlocks(parts.Length);
             MessageCirculation.addPaperOut();
         }
@@ -47,12 +74,17 @@ public class PaperInteractionIn : MonoBehaviour
         {
             paperSelected = true;
         }
-        else
+    }
+
+    private void OnMouseUp()
+    {
+        if (paperSelected == true)
         {
             paperSelected = false;
         }
     }
 
+    //Snapping the paper to the cursor when selected
     private void Update()
     {
         Vector3 mouse = Input.mousePosition;

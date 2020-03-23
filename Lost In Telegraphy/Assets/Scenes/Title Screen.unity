@@ -428,4 +428,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: start
-  sceneName: COMS game screen
+  sceneName: Game Screen

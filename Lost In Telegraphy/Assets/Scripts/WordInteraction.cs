@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ Game made by: Owen Hellum @ Concordia University
+ Project for my COMS 360 and LING 300 classes
+
+ Check out the documentation here: https://bit.ly/LostInTelegraphy
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -11,16 +18,16 @@ public class WordInteraction : MonoBehaviour
 
     private float outLength;
 
-    public static int wordSet;
-
     public static GameObject block;
 
     public static GameObject outPaper;
 
+    //Differently-sized sprites for the word blocks
     public Sprite block1;
     public Sprite block2;
     public Sprite block3;
     public Sprite block4;
+    public Sprite block5;
     private Sprite wordBlockSprite;
 
     private void Start()
@@ -35,6 +42,7 @@ public class WordInteraction : MonoBehaviour
 
         this.GetComponentInChildren<MeshRenderer>().sortingOrder = 3;
 
+        //Sets the correct block length depending on the length of the word it contains
         if (this.GetComponentInChildren<TextMeshPro>().text.Length <= 1)
         {
             wordBlockSprite = block1;
@@ -50,10 +58,15 @@ public class WordInteraction : MonoBehaviour
             wordBlockSprite = block3;
             GetComponent<BoxCollider2D>().size = new Vector2(0.06f, 0.02f);
         }
-        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 5)
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 5 && this.GetComponentInChildren<TextMeshPro>().text.Length <= 7)
         {
             wordBlockSprite = block4;
             GetComponent<BoxCollider2D>().size = new Vector2(0.08f, 0.02f);
+        }
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 7)
+        {
+            wordBlockSprite = block5;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.10f, 0.02f);
         }
 
         this.gameObject.GetComponent<SpriteRenderer>().sprite = wordBlockSprite;
@@ -65,12 +78,17 @@ public class WordInteraction : MonoBehaviour
         {
             blockSelected = true;
         }
-        else
+    }
+
+    private void OnMouseUp()
+    {
+        if (blockSelected == true)
         {
             blockSelected = false;
         }
     }
 
+    //Snapping the block to the cursor when selected
     private void Update()
     {
         Vector3 mouse = Input.mousePosition;
@@ -96,6 +114,7 @@ public class WordInteraction : MonoBehaviour
         }
     }
 
+    //Cosmetic IEnumerator for sliding the blocks out of the dispenser
     IEnumerator blockSlide()
     {
         float i;
@@ -107,21 +126,5 @@ public class WordInteraction : MonoBehaviour
 
         this.GetComponent<SpriteRenderer>().sortingOrder = 7;
         this.GetComponentInChildren<MeshRenderer>().sortingOrder = 8;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("MessageOut"))
-        {
-            wordSet++;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("MessageOut"))
-        {
-            wordSet--;
-        }
     }
 }
