@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 148481300}
   - component: {fileID: 148481299}
   m_Layer: 0
-  m_Name: Paper Dispenser
+  m_Name: PaperDispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 1073841050}
   - component: {fileID: 1073841049}
   m_Layer: 0
-  m_Name: Word Dispenser
+  m_Name: WordDispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 1110926523}
   - component: {fileID: 1110926524}
   m_Layer: 0
-  m_Name: Right Arrow
+  m_Name: RightArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 1570565423}
   - component: {fileID: 1570565425}
   m_Layer: 0
-  m_Name: Left Arrow
+  m_Name: LeftArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,7 +1174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042057615}
   m_Layer: 0
-  m_Name: Message Instantiator
+  m_Name: MessageInstantiator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

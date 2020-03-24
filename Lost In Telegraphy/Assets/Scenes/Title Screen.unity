@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: exit
-  sceneName: COMS game screen
+  sceneName: 
 --- !u!61 &986275501
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -428,4 +428,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: start
-  sceneName: Game Screen
+  sceneName: Tutorial Screen
