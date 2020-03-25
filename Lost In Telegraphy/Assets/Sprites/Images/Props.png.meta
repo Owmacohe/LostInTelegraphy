@@ -4,66 +4,69 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7265313343042191254
-    second: Props_0
+    second: OutPaperSprite
   - first:
       213: -4871644234308700824
-    second: Props_1
+    second: InPaper1
   - first:
       213: 7466427622202046938
-    second: Props_2
+    second: InPaper2
   - first:
       213: 4489838820935638777
-    second: Props_3
+    second: InPaper3
   - first:
       213: -1870876656750283219
-    second: Props_4
+    second: InfoSprite
   - first:
       213: -4004860913340282569
-    second: Props_5
+    second: FlippedSprite
   - first:
       213: -6362549862341014049
-    second: Props_6
+    second: InPaper4
   - first:
       213: -9085773957535209297
-    second: Props_7
+    second: InPaper5
   - first:
       213: 4556875247267356194
-    second: Props_8
+    second: SendSprite
   - first:
       213: 5595747086137543514
-    second: Props_9
+    second: SentSprite
   - first:
       213: -7669659779516665821
-    second: Props_0
+    second: OutPaperSprite
   - first:
       213: 5355365196376782378
-    second: Props_1
+    second: InPaper1
   - first:
       213: -5170453830414347241
-    second: Props_2
+    second: InPaper2
   - first:
       213: -8745069658281064543
-    second: Props_3
+    second: InPaper3
   - first:
       213: 1159694720919351335
-    second: Props_4
+    second: InfoSprite
   - first:
       213: -9001849108287352803
-    second: Props_5
+    second: FlippedSprite
   - first:
       213: 754815682244670510
-    second: Props_6
+    second: InPaper4
   - first:
       213: 3180178527373646009
-    second: Props_7
+    second: InPaper5
   - first:
       213: 5095831186100758718
-    second: Props_8
+    second: SendSprite
   - first:
       213: -6465525062967446402
-    second: Props_9
+    second: SentSprite
+  - first:
+      213: 4730907938173302739
+    second: ShadowSprite
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -117,6 +120,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -182,7 +186,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Props_0
+      name: OutPaperSprite
       rect:
         serializedVersion: 2
         x: 1
@@ -190,7 +194,7 @@ TextureImporter:
         width: 20
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_1
+      name: InPaper1
       rect:
         serializedVersion: 2
         x: 22
@@ -211,7 +215,7 @@ TextureImporter:
         width: 17
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_2
+      name: InPaper2
       rect:
         serializedVersion: 2
         x: 40
@@ -232,7 +236,7 @@ TextureImporter:
         width: 18
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_3
+      name: InPaper3
       rect:
         serializedVersion: 2
         x: 59
@@ -253,7 +257,7 @@ TextureImporter:
         width: 17
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,15 +270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_4
+      name: InfoSprite
       rect:
         serializedVersion: 2
-        x: 1
-        y: 20
-        width: 20
-        height: 3
+        x: 77
+        y: 1
+        width: 15
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,15 +291,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_5
+      name: FlippedSprite
       rect:
         serializedVersion: 2
-        x: 40
-        y: 16
-        width: 18
-        height: 10
+        x: 1
+        y: 20
+        width: 20
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,15 +312,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_6
+      name: InPaper4
       rect:
         serializedVersion: 2
-        x: 59
+        x: 40
         y: 16
-        width: 17
+        width: 18
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -329,15 +333,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_7
+      name: InPaper5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 7
-        width: 22
-        height: 8
+        x: 59
+        y: 16
+        width: 17
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -350,15 +354,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_8
+      name: SendSprite
       rect:
         serializedVersion: 2
-        x: 24
-        y: 8
-        width: 19
-        height: 7
+        x: 1
+        y: 7
+        width: 22
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -371,15 +375,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_9
+      name: SentSprite
       rect:
         serializedVersion: 2
-        x: 44
-        y: 1
-        width: 22
-        height: 14
+        x: 24
+        y: 8
+        width: 19
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,6 +391,27 @@ TextureImporter:
       bones: []
       spriteID: e74b0770637d546a0800000000000000
       internalID: -6465525062967446402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowSprite
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d735ef44bf87a140800000000000000
+      internalID: 4730907938173302739
       vertices: []
       indices: 
       edges: []

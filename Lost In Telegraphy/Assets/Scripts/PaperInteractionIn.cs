@@ -12,7 +12,7 @@ using UnityEngine;
 
 public class PaperInteractionIn : MonoBehaviour
 {
-    public static bool acknowledged = false;
+    public static bool acknowledged;
 
     //Variables for breaking the sentence down into individual words
     public static TextMeshPro messageText;
@@ -60,6 +60,7 @@ public class PaperInteractionIn : MonoBehaviour
 
             MessageCirculation.addBlocks(parts.Length);
             MessageCirculation.addPaperOut();
+            StartCoroutine(MessageCirculation.slideInfoSheet());
         }
 
         this.GetComponent<SpriteRenderer>().sortingOrder = 4;

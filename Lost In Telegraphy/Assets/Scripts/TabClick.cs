@@ -29,5 +29,7 @@ public class TabClick : MonoBehaviour
         {
             Destroy(blocks[i], 0.5f);
         }
+
+        MessageCirculation.infoSheet.transform.position = new Vector3(MessageCirculation.infoSheet.transform.position.x, 8.6f, 0);
     }
 }

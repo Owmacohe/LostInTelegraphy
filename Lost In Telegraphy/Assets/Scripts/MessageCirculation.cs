@@ -53,6 +53,14 @@ public class MessageCirculation : MonoBehaviour
     //Seriousness level
     public static int messageCount = 1;
 
+    public GameObject infoSheetInput;
+    public static GameObject infoSheet;
+
+    public GameObject sheetTitle;
+
+    public GameObject sheetInfoInput;
+    public static GameObject sheetInfo;
+
     void Start()
     {
         //Starts the cycle
@@ -67,6 +75,12 @@ public class MessageCirculation : MonoBehaviour
         block = blockInput;
 
         paperOut = paperOutInput;
+
+        infoSheet = infoSheetInput;
+        sheetInfo = sheetInfoInput;
+
+        sheetTitle.GetComponent<MeshRenderer>().sortingOrder = 4;
+        sheetInfo.GetComponent<MeshRenderer>().sortingOrder = 4;
     }
 
     private void newMessage()
@@ -248,5 +262,17 @@ public class MessageCirculation : MonoBehaviour
     {
         instPaperOut = Instantiate(paperOut, new Vector2(6.5f, -3.2f), Quaternion.identity);
         instPaperOutSprite = instPaperOut.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public static IEnumerator slideInfoSheet()
+    {
+        sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + PaperMessages.senderInfo[0, Random.Range(0, 5)] + "\nAge: " + Random.Range(5, 80) + "\nEthnicity: " + PaperMessages.senderInfo[1, Random.Range(0, 5)] + "\nPolitical Alignment: " + PaperMessages.senderInfo[2, Random.Range(0, 5)];
+
+        float i;
+        for (i = infoSheet.transform.position.y; i > 6; i = (i - 0.02f))
+        {
+            infoSheet.transform.Translate(0, -0.02f, 0);
+            yield return new WaitForSeconds(0);
+        }
     }
 }

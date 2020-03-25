@@ -11,6 +11,34 @@ using UnityEngine;
 
 public class PaperMessages : MonoBehaviour
 {
+    public static string[,] senderInfo = new string[,]
+    {
+        //Gender
+        {
+            "Male",
+            "Female",
+            "Non-binary",
+            "Genderfluid",
+            "Other"
+        },
+        //Ethnicity
+        {
+            "White",
+            "Black",
+            "Indigenous",
+            "Middle Eastern",
+            "Asian"
+        },
+        //Political Alignment
+        {
+            "Authoritarian Right",
+            "Libertarian Right",
+            "Authoritarian Left",
+            "Libertarian Left",
+            "Apolitical"
+        }
+    };
+
     public static string[] casualMessages = new string[] {
         "Remember to buy apples when you're out",
         "Can you send me a list of your favourite songs?",

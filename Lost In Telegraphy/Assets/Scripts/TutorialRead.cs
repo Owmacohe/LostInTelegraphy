@@ -7,8 +7,8 @@ public class TutorialRead : MonoBehaviour
     public string buttonType;
     public Transform textTransform;
 
-    private bool pressDown = false;
-    private bool pressUp = false;
+    private bool pressDown;
+    private bool pressUp;
 
     private void OnMouseDown()
     {
