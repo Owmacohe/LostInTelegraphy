@@ -112,7 +112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: songs?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -299,15 +299,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6364626718956003648, guid: f8befe1469e57ce42b93feaa5ecda06a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.02, y: 0.02}
+  m_Size: {x: 0.1, y: 0.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &7122593457711954434
@@ -327,8 +328,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.04, y: 0.02}
-    newSize: {x: 0.04, y: 0.02}
+    oldSize: {x: 0.1, y: 0.02}
+    newSize: {x: 0.1, y: 0.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -353,3 +354,5 @@ MonoBehaviour:
   block3: {fileID: -7122703986234351451, guid: f8befe1469e57ce42b93feaa5ecda06a, type: 3}
   block4: {fileID: -6192766498267779339, guid: f8befe1469e57ce42b93feaa5ecda06a, type: 3}
   block5: {fileID: 6364626718956003648, guid: f8befe1469e57ce42b93feaa5ecda06a, type: 3}
+  block6: {fileID: 2020539197254527967, guid: f8befe1469e57ce42b93feaa5ecda06a, type: 3}
+  block7: {fileID: 2037800902337353765, guid: f8befe1469e57ce42b93feaa5ecda06a, type: 3}

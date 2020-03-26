@@ -269,7 +269,7 @@ public class MessageCirculation : MonoBehaviour
         sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + PaperMessages.senderInfo[0, Random.Range(0, 5)] + "\nAge: " + Random.Range(5, 80) + "\nEthnicity: " + PaperMessages.senderInfo[1, Random.Range(0, 5)] + "\nPolitical Alignment: " + PaperMessages.senderInfo[2, Random.Range(0, 5)];
 
         float i;
-        for (i = infoSheet.transform.position.y; i > 6; i = (i - 0.02f))
+        for (i = infoSheet.transform.position.y; i > 6.05f; i = (i - 0.02f))
         {
             infoSheet.transform.Translate(0, -0.02f, 0);
             yield return new WaitForSeconds(0);

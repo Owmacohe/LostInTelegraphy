@@ -25,5 +25,9 @@ public class MenuButton : MonoBehaviour
         {
             Application.Quit();
         }
+        else if (buttonType == "tutorial")
+        {
+            StartCoroutine(TutorialOrder.runTutorial(sceneName));
+        }
     }
 }

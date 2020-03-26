@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\ScreenShift.cs" />
     <Compile Include="Assets\Scripts\SlotCheck.cs" />
     <Compile Include="Assets\Scripts\TabClick.cs" />
+    <Compile Include="Assets\Scripts\TutorialOrder.cs" />
     <Compile Include="Assets\Scripts\TutorialRead.cs" />
     <Compile Include="Assets\Scripts\WordInteraction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

@@ -20,8 +20,26 @@ TextureImporter:
   - first:
       213: 2020539197254527967
     second: Word block_5
+  - first:
+      213: -5565295341195192633
+    second: Word block_0
+  - first:
+      213: 5889791552912393080
+    second: Word block_1
+  - first:
+      213: -7493827796881430865
+    second: Word block_2
+  - first:
+      213: -2541250716482836878
+    second: Word block_3
+  - first:
+      213: 5501067285246603193
+    second: Word block_4
+  - first:
+      213: 2037800902337353765
+    second: Word block_6
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -75,6 +93,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -154,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab9629c238208cc20800000000000000
-      internalID: 3226831895422724538
+      spriteID: 7c69ce59f5914c2b0800000000000000
+      internalID: -5565295341195192633
       vertices: []
       indices: 
       edges: []
@@ -175,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeb6a92975e7dbd70800000000000000
-      internalID: 9060536939926154218
+      spriteID: 8738070463ebcb150800000000000000
+      internalID: 5889791552912393080
       vertices: []
       indices: 
       edges: []
@@ -196,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a02e345672172d90800000000000000
-      internalID: -7122703986234351451
+      spriteID: fa62fee9253900890800000000000000
+      internalID: -7493827796881430865
       vertices: []
       indices: 
       edges: []
@@ -217,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe2fc53eafde0aa0800000000000000
-      internalID: -6192766498267779339
+      spriteID: 27665deffe9abbcd0800000000000000
+      internalID: -2541250716482836878
       vertices: []
       indices: 
       edges: []
@@ -238,8 +257,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04125579742b35850800000000000000
-      internalID: 6364626718956003648
+      spriteID: 9bf65aecc87b75c40800000000000000
+      internalID: 5501067285246603193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Word block_5
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1
+        width: 12
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbeb13d1b56a0c10800000000000000
+      internalID: 2020539197254527967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Word block_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 14
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528d9cabf19b74c10800000000000000
+      internalID: 2037800902337353765
       vertices: []
       indices: 
       edges: []

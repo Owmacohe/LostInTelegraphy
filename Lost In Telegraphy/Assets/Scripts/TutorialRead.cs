@@ -6,6 +6,7 @@ public class TutorialRead : MonoBehaviour
 {
     public string buttonType;
     public Transform textTransform;
+    public Transform startTransform;
 
     private bool pressDown;
     private bool pressUp;
@@ -34,10 +35,12 @@ public class TutorialRead : MonoBehaviour
         if (pressDown == true && textTransform.position.y < 8.5)
         {
             textTransform.Translate(0, 0.05f, 0);
+            startTransform.Translate(0, 0.05f, 0);
         }
         else if (pressUp == true && textTransform.position.y > 0)
         {
             textTransform.Translate(0, -0.05f, 0);
+            startTransform.Translate(0, -0.05f, 0);
         }
     }
 }

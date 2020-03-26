@@ -28,6 +28,8 @@ public class WordInteraction : MonoBehaviour
     public Sprite block3;
     public Sprite block4;
     public Sprite block5;
+    public Sprite block6;
+    public Sprite block7;
     private Sprite wordBlockSprite;
 
     private void Start()
@@ -63,10 +65,20 @@ public class WordInteraction : MonoBehaviour
             wordBlockSprite = block4;
             GetComponent<BoxCollider2D>().size = new Vector2(0.08f, 0.02f);
         }
-        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 7)
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 7 && this.GetComponentInChildren<TextMeshPro>().text.Length <= 9)
         {
             wordBlockSprite = block5;
             GetComponent<BoxCollider2D>().size = new Vector2(0.10f, 0.02f);
+        }
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 9 && this.GetComponentInChildren<TextMeshPro>().text.Length <= 11)
+        {
+            wordBlockSprite = block6;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.12f, 0.02f);
+        }
+        else if (this.GetComponentInChildren<TextMeshPro>().text.Length > 11)
+        {
+            wordBlockSprite = block7;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.14f, 0.02f);
         }
 
         this.gameObject.GetComponent<SpriteRenderer>().sprite = wordBlockSprite;
