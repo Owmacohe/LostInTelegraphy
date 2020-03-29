@@ -11,8 +11,77 @@ using UnityEngine;
 
 public class PaperMessages : MonoBehaviour
 {
-    public static string[,] senderInfo = new string[,]
-    {
+    public static int[,] accuracyScores = {
+        //Gender
+        {
+            0, //Male
+            0, //Female
+            0, //Non-binary
+            0, //Genderfluid
+            0 //Other
+        },
+        //Age
+        {
+            0, //1 to 20
+            0, //21 to 40
+            0, //41 to 60
+            0, //61 to 80
+            0 //81 to 100
+        },
+        //Ethnicity
+        {
+            0, //White
+            0, //Black
+            0, //Indigenous
+            0, //Middle Eastern
+            0 //Asian
+        },
+        //Political Alignment
+        {
+            0, //Authoritarian Right
+            0, //Libertarian Right
+            0, //Authoritarian Left
+            0, //Libertarian Left
+            0 //Apolitical
+        }
+    };
+
+    public static int[,] lengthScores = {
+        //Gender
+        {
+            0, //Male
+            0, //Female
+            0, //Non-binary
+            0, //Genderfluid
+            0 //Other
+        },
+        //Age
+        {
+            0, //1 to 20
+            0, //21 to 40
+            0, //41 to 60
+            0, //61 to 80
+            0 //81 to 100
+        },
+        //Ethnicity
+        {
+            0, //White
+            0, //Black
+            0, //Indigenous
+            0, //Middle Eastern
+            0 //Asian
+        },
+        //Political Alignment
+        {
+            0, //Authoritarian Right
+            0, //Libertarian Right
+            0, //Authoritarian Left
+            0, //Libertarian Left
+            0 //Apolitical
+        }
+    };
+
+    public static string[,] senderInfo = {
         //Gender
         {
             "Male",
@@ -39,7 +108,7 @@ public class PaperMessages : MonoBehaviour
         }
     };
 
-    public static string[] casualMessages = new string[] {
+    public static string[] casualMessages = {
         "Remember to buy apples when you're out",
         "Can you send me a list of your favourite songs?",
         "Please come see me in my office this Tuesday",
@@ -50,7 +119,7 @@ public class PaperMessages : MonoBehaviour
         "Could I come by and borrow some sugar tomorrow?"
     };
 
-    public static string[] seriousMessages = new string[] {
+    public static string[] seriousMessages = {
         "The next union meeting is tomorrow evening",
         "Have you been going to church lately?",
         "I'm not really a fan of the new government",
@@ -61,7 +130,7 @@ public class PaperMessages : MonoBehaviour
         "How many times have I told you not to let your kid cross my lawn?"
     };
 
-    public static string[] direMessages = new string[] {
+    public static string[] direMessages = {
         "The embassy is the next target, be prepared",
         "How many of the 'goods' were you able to secure?",
         "The bar down the street just opened up its first womens' only evening",
@@ -72,8 +141,7 @@ public class PaperMessages : MonoBehaviour
         "When do you have time to organize the next protest?"
     };
 
-    public static string[,] synonyms = new string[,]
-    {
+    public static string[,] synonyms = {
         //casual synonyms
         {
             "buy",

@@ -61,6 +61,11 @@ public class MessageCirculation : MonoBehaviour
     public GameObject sheetInfoInput;
     public static GameObject sheetInfo;
 
+    public static string infoGender;
+    public static int infoAge;
+    public static string infoEthnicity;
+    public static string infoPoliticalAlignment;
+
     void Start()
     {
         //Starts the cycle
@@ -266,7 +271,12 @@ public class MessageCirculation : MonoBehaviour
 
     public static IEnumerator slideInfoSheet()
     {
-        sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + PaperMessages.senderInfo[0, Random.Range(0, 5)] + "\nAge: " + Random.Range(5, 80) + "\nEthnicity: " + PaperMessages.senderInfo[1, Random.Range(0, 5)] + "\nPolitical Alignment: " + PaperMessages.senderInfo[2, Random.Range(0, 5)];
+        infoGender = PaperMessages.senderInfo[0, Random.Range(0, 5)];
+        infoAge = Random.Range(1, 100);
+        infoEthnicity = PaperMessages.senderInfo[1, Random.Range(0, 5)];
+        infoPoliticalAlignment = PaperMessages.senderInfo[2, Random.Range(0, 5)];
+
+        sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + infoGender + "\nAge: " + infoAge + "\nEthnicity: " + infoEthnicity + "\nPolitical Alignment: " + infoPoliticalAlignment;
 
         float i;
         for (i = infoSheet.transform.position.y; i > 6.05f; i = (i - 0.02f))
