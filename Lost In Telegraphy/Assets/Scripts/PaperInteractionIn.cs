@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PaperInteractionIn : MonoBehaviour
 {
@@ -39,10 +40,14 @@ public class PaperInteractionIn : MonoBehaviour
             randomMessage = Random.Range(0, PaperMessages.seriousMessages.Length);
             messageText.text = PaperMessages.seriousMessages[randomMessage];
         }
-        else if (MessageCirculation.messageCount >= 9)
+        else if (MessageCirculation.messageCount >= 9 && MessageCirculation.messageCount < 13)
         {
             randomMessage = Random.Range(0, PaperMessages.direMessages.Length);
             messageText.text = PaperMessages.direMessages[randomMessage];
+        }
+        else if (MessageCirculation.messageCount >= 13)
+        {
+            SceneManager.LoadScene("Results Screen");
         }
 
         sentence = messageText.text;

@@ -32,28 +32,28 @@ public class TabClick : MonoBehaviour
         }
 
         float accPercentage = Mathf.Round(((float)correctCount / PaperInteractionIn.parts.Length) * 100);
-        Debug.Log("Accuracy percentage: " + accPercentage + "%");
 
-        if (accPercentage >= 50)
+        if (accPercentage >= 70)
         {
-            doScores(PaperMessages.accuracyScores, 1);
+            doScores(PaperMessages.accuracyScores, accPercentage / 100);
         }
-        else if (accPercentage < 50)
+        else if (accPercentage < 70)
         {
-            doScores(PaperMessages.accuracyScores, -1);
+            doScores(PaperMessages.accuracyScores, -(1 - (accPercentage / 100)));
         }
 
         float lenPercentage = Mathf.Round(((float)PaperInteractionOut.attatchedBlocks.Count / PaperInteractionIn.parts.Length) * 100);
-        Debug.Log("Length percentage: " + lenPercentage + "%");
 
-        if (lenPercentage >= 50)
+        if (lenPercentage >= 85)
         {
-            doScores(PaperMessages.lengthScores, 1);
+            doScores(PaperMessages.lengthScores, lenPercentage / 100);
         }
-        else if (lenPercentage < 50)
+        else if (lenPercentage < 85)
         {
-            doScores(PaperMessages.lengthScores, -1);
+            doScores(PaperMessages.lengthScores, -(1 - (lenPercentage / 100)));
         }
+
+        Debug.Log("Accuracy percentage: " + accPercentage + "%" + " Length percentage: " + lenPercentage + "%" + " " + PaperMessages.accuracyScores[0, 0] + " " + PaperMessages.accuracyScores[0, 1] + " " + PaperMessages.accuracyScores[0, 2] + " " + PaperMessages.accuracyScores[0, 3]);
 
         MessageCirculation.tabSet("sent", "down");
         MessageCirculation.tabSet("send", "up");
@@ -75,7 +75,7 @@ public class TabClick : MonoBehaviour
         MessageCirculation.infoSheet.transform.position = new Vector3(MessageCirculation.infoSheet.transform.position.x, 8.6f, 0);
     }
 
-    void doScores(int[,] scoreType, int changeType)
+    void doScores(float[,] scoreType, float changeType)
     {
         switch (MessageCirculation.infoGender)
         {

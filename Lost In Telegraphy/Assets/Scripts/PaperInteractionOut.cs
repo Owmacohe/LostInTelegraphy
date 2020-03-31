@@ -25,42 +25,7 @@ public class PaperInteractionOut : MonoBehaviour
     private void OnMouseDown()
     {
         this.GetComponent<SpriteRenderer>().sortingOrder = 6;
-
-        /*
-        if (paperSelected == false)
-        {
-            paperSelected = true;
-        }
-        */
     }
-
-    /*
-    private void OnMouseUp()
-    {
-        if (paperSelected == true)
-        {
-            paperSelected = false;
-        }
-    }
-    */
-
-    /*
-    private void Update()
-    {
-        Vector3 mouse = Input.mousePosition;
-        mouse.z = Camera.main.nearClipPlane;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mouse);
-
-        if (paperSelected == true)
-        {
-            this.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0);
-        }
-        else
-        {
-            return;
-        }
-    }
-    */
 
     //Cosmetic IEnumerator for sliding the outgoing message out
     IEnumerator paperOutSlide()

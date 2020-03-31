@@ -11,34 +11,39 @@ public class ResultDisplay : MonoBehaviour
 
     void Start()
     {
-        int genderAccuracyMax = 0;
-        int genderLengthMax = 0;
+        float genderAccuracyMax = 0;
+        float genderLengthMax = 0;
         string genderAccuracyResult = "";
         string genderLengthResult = "";
 
         getScores(0, genderAccuracyMax, genderLengthMax, genderAccuracyResult, genderLengthResult);
 
-        //age
+        float ageAccuracyMax = 0;
+        float ageLengthMax = 0;
+        string ageAccuracyResult = "";
+        string ageLengthResult = "";
 
-        int ethnicityAccuracyMax = 0;
-        int ethnicityLengthMax = 0;
+        getScores(1, ageAccuracyMax, ageLengthMax, ageAccuracyResult, ageLengthResult);
+
+        float ethnicityAccuracyMax = 0;
+        float ethnicityLengthMax = 0;
         string ethnicityAccuracyResult = "";
         string ethnicityLengthResult = "";
 
-        getScores(0, ethnicityAccuracyMax, ethnicityLengthMax, ethnicityAccuracyResult, ethnicityLengthResult);
+        getScores(2, ethnicityAccuracyMax, ethnicityLengthMax, ethnicityAccuracyResult, ethnicityLengthResult);
 
-        int politicalAlignmentAccuracyMax = 0;
-        int politicalAlignmentLengthMax = 0;
+        float politicalAlignmentAccuracyMax = 0;
+        float politicalAlignmentLengthMax = 0;
         string politicalAlignmentAccuracyResult = "";
         string politicalAlignmentLengthResult = "";
 
-        getScores(0, politicalAlignmentAccuracyMax, politicalAlignmentLengthMax, politicalAlignmentAccuracyResult, politicalAlignmentLengthResult);
+        getScores(3, politicalAlignmentAccuracyMax, politicalAlignmentLengthMax, politicalAlignmentAccuracyResult, politicalAlignmentLengthResult);
 
-        accuracy.text = "Gender: " + genderAccuracyResult + "\nAge: " /*+  */+ "\nEthnicity: " + ethnicityAccuracyResult + "\nPolitical Alignment: " + politicalAlignmentAccuracyResult;
-        length.text = "Gender: " + genderLengthResult + "\nAge: " /*+  */+ "\nEthnicity: " + ethnicityLengthResult + "\nPolitical Alignment: " + politicalAlignmentLengthResult;
+        accuracy.text = "Gender: " + genderAccuracyResult + "\nAge: " + ageAccuracyResult + "\nEthnicity: " + ethnicityAccuracyResult + "\nPolitical Alignment: " + politicalAlignmentAccuracyResult;
+        length.text = "Gender: " + genderLengthResult + "\nAge: " + ageLengthResult + "\nEthnicity: " + ethnicityLengthResult + "\nPolitical Alignment: " + politicalAlignmentLengthResult;
     }
 
-    void getScores(int identityElement, int acMax, int lnMax, string acRes, string lnRes)
+    void getScores(int identityElement, float acMax, float lnMax, string acRes, string lnRes)
     {
         int i;
         for (i = 0; i < 5; i++)
@@ -47,7 +52,6 @@ public class ResultDisplay : MonoBehaviour
             {
                 acMax = PaperMessages.accuracyScores[identityElement, i];
                 acRes = PaperMessages.senderInfo[identityElement, i];
-
             }
 
             if (PaperMessages.lengthScores[identityElement, i] > lnMax)

@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class PaperMessages : MonoBehaviour
 {
-    public static int[,] accuracyScores = {
+    public static float[,] accuracyScores = {
         //Gender
         {
             0, //Male
@@ -46,7 +46,7 @@ public class PaperMessages : MonoBehaviour
         }
     };
 
-    public static int[,] lengthScores = {
+    public static float[,] lengthScores = {
         //Gender
         {
             0, //Male
