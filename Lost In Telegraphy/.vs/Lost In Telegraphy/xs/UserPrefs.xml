@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{32DB78E9-7BE3-4CB6-0E75-E845DFCFEB8A}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TabClick.cs">
     <Files>
-      <File FileName="Assets/Scripts/MessageCirculation.cs" Line="278" Column="1" />
-      <File FileName="Assets/Scripts/PaperInteractionIn.cs" Line="84" Column="21" />
-      <File FileName="Assets/Scripts/PaperInteractionOut.cs" Line="64" Column="18" />
-      <File FileName="Assets/Scripts/TabClick.cs" Line="94" Column="11" />
+      <File FileName="Assets/Scripts/MessageCirculation.cs" Line="170" Column="6" />
+      <File FileName="Assets/Scripts/PaperInteractionIn.cs" Line="20" Column="28" />
+      <File FileName="Assets/Scripts/PaperInteractionOut.cs" Line="20" Column="9" />
+      <File FileName="Assets/Scripts/TabClick.cs" Line="56" Column="10" />
       <File FileName="Assets/Scripts/PaperMessages.cs" Line="49" Column="42" />
-      <File FileName="Assets/Scripts/ResultDisplay.cs" Line="38" Column="74" />
+      <File FileName="Assets/Scripts/ResultDisplay.cs" Line="55" Column="72" />
+      <File FileName="Assets/Scripts/ScreenShift.cs" Line="123" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e599c550-44c4-4297-8f00-b1855dd1e6aa" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d83658a4-f819-415c-8a7e-6b7f46c6fdd2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

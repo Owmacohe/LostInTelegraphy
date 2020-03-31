@@ -7,91 +7,53 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TabClick : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        /*
-        switch (MessageCirculation.infoGender)
+        int correctCount = 0;
+
+        int i;
+        for (i = 0; i < PaperInteractionOut.attatchedBlocks.Count; i++)
         {
-            case "Male":
-                PaperMessages.identityScores[0, 0]++;
-                break;
-            case "Female":
-                PaperMessages.identityScores[0, 1]++;
-                break;
-            case "Non-binary":
-                PaperMessages.identityScores[0, 2]++;
-                break;
-            case "Genderfluid":
-                PaperMessages.identityScores[0, 3]++;
-                break;
-            case "Other":
-                PaperMessages.identityScores[0, 4]++;
-                break;
+            int j;
+            for (j = 0; j < PaperInteractionIn.parts.Length; j++)
+            {
+                if (PaperInteractionOut.attatchedBlocks[i].GetComponentInChildren<TextMeshPro>().text == PaperInteractionIn.parts[j])
+                {
+                    //Debug.Log("Correct word: " + PaperInteractionIn.parts[j]);
+
+                    correctCount++;
+                }
+            }
         }
 
-        if (MessageCirculation.infoAge >= 1 && MessageCirculation.infoAge < 21)
+        float accPercentage = Mathf.Round(((float)correctCount / PaperInteractionIn.parts.Length) * 100);
+        Debug.Log("Accuracy percentage: " + accPercentage + "%");
+
+        if (accPercentage >= 50)
         {
-            PaperMessages.identityScores[1, 0]++;
+            doScores(PaperMessages.accuracyScores, 1);
         }
-        else if (MessageCirculation.infoAge >= 21 && MessageCirculation.infoAge < 41)
+        else if (accPercentage < 50)
         {
-            PaperMessages.identityScores[1, 1]++;
-        }
-        else if (MessageCirculation.infoAge >= 41 && MessageCirculation.infoAge < 61)
-        {
-            PaperMessages.identityScores[1, 2]++;
-        }
-        else if (MessageCirculation.infoAge >= 61 && MessageCirculation.infoAge < 81)
-        {
-            PaperMessages.identityScores[1, 3]++;
-        }
-        else if (MessageCirculation.infoAge >= 81 && MessageCirculation.infoAge < 101)
-        {
-            PaperMessages.identityScores[1, 4]++;
+            doScores(PaperMessages.accuracyScores, -1);
         }
 
-        switch (MessageCirculation.infoEthnicity)
-        {
-            case "White":
-                PaperMessages.identityScores[2, 0]++;
-                break;
-            case "Black":
-                PaperMessages.identityScores[2, 1]++;
-                break;
-            case "Indigenous":
-                PaperMessages.identityScores[2, 2]++;
-                break;
-            case "Middle Eastern":
-                PaperMessages.identityScores[2, 3]++;
-                break;
-            case "Asian":
-                PaperMessages.identityScores[2, 4]++;
-                break;
-        }
+        float lenPercentage = Mathf.Round(((float)PaperInteractionOut.attatchedBlocks.Count / PaperInteractionIn.parts.Length) * 100);
+        Debug.Log("Length percentage: " + lenPercentage + "%");
 
-        switch (MessageCirculation.infoPoliticalAlignment)
+        if (lenPercentage >= 50)
         {
-            case "Authoritarian Right":
-                PaperMessages.identityScores[3, 0]++;
-                break;
-            case "Libertarian Right":
-                PaperMessages.identityScores[3, 1]++;
-                break;
-            case "Authoritarian Left":
-                PaperMessages.identityScores[3, 2]++;
-                break;
-            case "Libertarian Left":
-                PaperMessages.identityScores[3, 3]++;
-                break;
-            case "Apolitical":
-                PaperMessages.identityScores[3, 4]++;
-                break;
+            doScores(PaperMessages.lengthScores, 1);
         }
-        */
+        else if (lenPercentage < 50)
+        {
+            doScores(PaperMessages.lengthScores, -1);
+        }
 
         MessageCirculation.tabSet("sent", "down");
         MessageCirculation.tabSet("send", "up");
@@ -104,12 +66,93 @@ public class TabClick : MonoBehaviour
 
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
 
-        int i;
-        for (i = 0; i < blocks.Length; i++)
+        int k;
+        for (k = 0; k < blocks.Length; k++)
         {
-            Destroy(blocks[i], 0.5f);
+            Destroy(blocks[k], 0.5f);
         }
 
         MessageCirculation.infoSheet.transform.position = new Vector3(MessageCirculation.infoSheet.transform.position.x, 8.6f, 0);
+    }
+
+    void doScores(int[,] scoreType, int changeType)
+    {
+        switch (MessageCirculation.infoGender)
+        {
+            case "Male":
+                scoreType[0, 0] = scoreType[0, 0] + changeType;
+                break;
+            case "Female":
+                scoreType[0, 1] = scoreType[0, 1] + changeType;
+                break;
+            case "Non-binary":
+                scoreType[0, 2] = scoreType[0, 2] + changeType;
+                break;
+            case "Genderfluid":
+                scoreType[0, 3] = scoreType[0, 3] + changeType;
+                break;
+            case "Other":
+                scoreType[0, 4] = scoreType[0, 4] + changeType;
+                break;
+        }
+
+        if (MessageCirculation.infoAge >= 1 && MessageCirculation.infoAge < 21)
+        {
+            scoreType[1, 0] = scoreType[1, 0] + changeType;
+        }
+        else if (MessageCirculation.infoAge >= 21 && MessageCirculation.infoAge < 41)
+        {
+            scoreType[1, 1] = scoreType[1, 1] + changeType;
+        }
+        else if (MessageCirculation.infoAge >= 41 && MessageCirculation.infoAge < 61)
+        {
+            scoreType[1, 2] = scoreType[1, 2] + changeType;
+        }
+        else if (MessageCirculation.infoAge >= 61 && MessageCirculation.infoAge < 81)
+        {
+            scoreType[1, 3] = scoreType[1, 3] + changeType;
+        }
+        else if (MessageCirculation.infoAge >= 81 && MessageCirculation.infoAge < 101)
+        {
+            scoreType[1, 4] = scoreType[1, 4] + changeType;
+        }
+
+        switch (MessageCirculation.infoEthnicity)
+        {
+            case "White":
+                scoreType[2, 0] = scoreType[2, 0] + changeType;
+                break;
+            case "Black":
+                scoreType[2, 1] = scoreType[2, 1] + changeType;
+                break;
+            case "Indigenous":
+                scoreType[2, 2] = scoreType[2, 2] + changeType;
+                break;
+            case "Middle Eastern":
+                scoreType[2, 3] = scoreType[2, 3] + changeType;
+                break;
+            case "Asian":
+                scoreType[2, 4] = scoreType[2, 4] + changeType;
+                break;
+        }
+
+        switch (MessageCirculation.infoPoliticalAlignment)
+        {
+            case "Authoritarian Right":
+                scoreType[3, 0] = scoreType[3, 0] + changeType;
+                break;
+            case "Libertarian Right":
+                scoreType[3, 1] = scoreType[3, 1] + changeType;
+                break;
+            case "Authoritarian Left":
+                scoreType[3, 2] = scoreType[3, 2] + changeType;
+                break;
+            case "Libertarian Left":
+                scoreType[3, 3] = scoreType[3, 3] + changeType;
+                break;
+            case "Apolitical":
+                scoreType[3, 4] = scoreType[3, 4] + changeType;
+                break;
+        }
     }
 }

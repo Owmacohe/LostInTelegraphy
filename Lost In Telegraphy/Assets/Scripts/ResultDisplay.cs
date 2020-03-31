@@ -53,7 +53,7 @@ public class ResultDisplay : MonoBehaviour
             if (PaperMessages.lengthScores[identityElement, i] > lnMax)
             {
                 lnMax = PaperMessages.lengthScores[identityElement, i];
-                acRes = PaperMessages.senderInfo[identityElement, i];
+                lnRes = PaperMessages.senderInfo[identityElement, i];
 
             }
         }

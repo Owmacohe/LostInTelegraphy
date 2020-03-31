@@ -17,6 +17,8 @@ public class PaperInteractionOut : MonoBehaviour
 
     private void Start()
     {
+        attatchedBlocks = new List<GameObject>();
+
         StartCoroutine(paperOutSlide());
     }
 
