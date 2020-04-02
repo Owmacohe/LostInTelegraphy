@@ -53,7 +53,7 @@ public class TabClick : MonoBehaviour
             doScores(PaperMessages.lengthScores, -(1 - (lenPercentage / 100)));
         }
 
-        Debug.Log("Accuracy percentage: " + accPercentage + "%" + " Length percentage: " + lenPercentage + "%" + " " + PaperMessages.accuracyScores[0, 0] + " " + PaperMessages.accuracyScores[0, 1] + " " + PaperMessages.accuracyScores[0, 2] + " " + PaperMessages.accuracyScores[0, 3]);
+        Debug.Log("Accuracy percentage: " + accPercentage + "%" + " Length percentage: " + lenPercentage + "%" + " /// " + PaperMessages.accuracyScores[1, 0] + " " + PaperMessages.accuracyScores[1, 1] + " " + PaperMessages.accuracyScores[1, 2] + " " + PaperMessages.accuracyScores[1, 3] + " " + PaperMessages.accuracyScores[1, 4]);
 
         MessageCirculation.tabSet("sent", "down");
         MessageCirculation.tabSet("send", "up");
@@ -80,78 +80,76 @@ public class TabClick : MonoBehaviour
         switch (MessageCirculation.infoGender)
         {
             case "Male":
-                scoreType[0, 0] = scoreType[0, 0] + changeType;
+                scoreType[0, 0] += changeType;
                 break;
             case "Female":
-                scoreType[0, 1] = scoreType[0, 1] + changeType;
+                scoreType[0, 1] += changeType;
                 break;
             case "Non-binary":
-                scoreType[0, 2] = scoreType[0, 2] + changeType;
+                scoreType[0, 2] += changeType;
                 break;
             case "Genderfluid":
-                scoreType[0, 3] = scoreType[0, 3] + changeType;
+                scoreType[0, 3] += changeType;
                 break;
             case "Other":
-                scoreType[0, 4] = scoreType[0, 4] + changeType;
+                scoreType[0, 4] += changeType;
                 break;
         }
 
-        if (MessageCirculation.infoAge >= 1 && MessageCirculation.infoAge < 21)
+        switch (MessageCirculation.infoAge)
         {
-            scoreType[1, 0] = scoreType[1, 0] + changeType;
-        }
-        else if (MessageCirculation.infoAge >= 21 && MessageCirculation.infoAge < 41)
-        {
-            scoreType[1, 1] = scoreType[1, 1] + changeType;
-        }
-        else if (MessageCirculation.infoAge >= 41 && MessageCirculation.infoAge < 61)
-        {
-            scoreType[1, 2] = scoreType[1, 2] + changeType;
-        }
-        else if (MessageCirculation.infoAge >= 61 && MessageCirculation.infoAge < 81)
-        {
-            scoreType[1, 3] = scoreType[1, 3] + changeType;
-        }
-        else if (MessageCirculation.infoAge >= 81 && MessageCirculation.infoAge < 101)
-        {
-            scoreType[1, 4] = scoreType[1, 4] + changeType;
+            case "1 to 20":
+                scoreType[1, 0] += changeType;
+                break;
+            case "21 to 40":
+                scoreType[1, 1] += changeType;
+                break;
+            case "40 to 61":
+                scoreType[1, 2] += changeType;
+                break;
+            case "60 to 81":
+                scoreType[1, 3] += changeType;
+                break;
+            case "80 to 100":
+                scoreType[1, 4] += changeType;
+                break;
         }
 
         switch (MessageCirculation.infoEthnicity)
         {
             case "White":
-                scoreType[2, 0] = scoreType[2, 0] + changeType;
+                scoreType[2, 0] += changeType;
                 break;
             case "Black":
-                scoreType[2, 1] = scoreType[2, 1] + changeType;
+                scoreType[2, 1] += changeType;
                 break;
             case "Indigenous":
-                scoreType[2, 2] = scoreType[2, 2] + changeType;
+                scoreType[2, 2] += changeType;
                 break;
             case "Middle Eastern":
-                scoreType[2, 3] = scoreType[2, 3] + changeType;
+                scoreType[2, 3] += changeType;
                 break;
             case "Asian":
-                scoreType[2, 4] = scoreType[2, 4] + changeType;
+                scoreType[2, 4] += changeType;
                 break;
         }
 
         switch (MessageCirculation.infoPoliticalAlignment)
         {
             case "Authoritarian Right":
-                scoreType[3, 0] = scoreType[3, 0] + changeType;
+                scoreType[3, 0] += changeType;
                 break;
             case "Libertarian Right":
-                scoreType[3, 1] = scoreType[3, 1] + changeType;
+                scoreType[3, 1] += changeType;
                 break;
             case "Authoritarian Left":
-                scoreType[3, 2] = scoreType[3, 2] + changeType;
+                scoreType[3, 2] += changeType;
                 break;
             case "Libertarian Left":
-                scoreType[3, 3] = scoreType[3, 3] + changeType;
+                scoreType[3, 3] += changeType;
                 break;
             case "Apolitical":
-                scoreType[3, 4] = scoreType[3, 4] + changeType;
+                scoreType[3, 4] += changeType;
                 break;
         }
     }

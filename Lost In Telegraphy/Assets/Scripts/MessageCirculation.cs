@@ -25,7 +25,7 @@ public class MessageCirculation : MonoBehaviour
     public Sprite paper4;
     public Sprite paper5;
 
-    //Editor inputs for ststic variables
+    //Editor inputs for static variables
 
     public GameObject sendInput;
     public static GameObject sendTab;
@@ -51,7 +51,7 @@ public class MessageCirculation : MonoBehaviour
     public static GameObject paperOut;
 
     //Seriousness level
-    public static int messageCount = 1;
+    public static int messageCount = 11;
 
     public GameObject infoSheetInput;
     public static GameObject infoSheet;
@@ -62,7 +62,7 @@ public class MessageCirculation : MonoBehaviour
     public static GameObject sheetInfo;
 
     public static string infoGender;
-    public static int infoAge;
+    public static string infoAge;
     public static string infoEthnicity;
     public static string infoPoliticalAlignment;
 
@@ -272,9 +272,9 @@ public class MessageCirculation : MonoBehaviour
     public static IEnumerator slideInfoSheet()
     {
         infoGender = PaperMessages.senderInfo[0, Random.Range(0, 5)];
-        infoAge = Random.Range(1, 100);
-        infoEthnicity = PaperMessages.senderInfo[1, Random.Range(0, 5)];
-        infoPoliticalAlignment = PaperMessages.senderInfo[2, Random.Range(0, 5)];
+        infoAge = PaperMessages.senderInfo[1, Random.Range(0, 5)];
+        infoEthnicity = PaperMessages.senderInfo[2, Random.Range(0, 5)];
+        infoPoliticalAlignment = PaperMessages.senderInfo[3, Random.Range(0, 5)];
 
         sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + infoGender + "\nAge: " + infoAge + "\nEthnicity: " + infoEthnicity + "\nPolitical Alignment: " + infoPoliticalAlignment;
 

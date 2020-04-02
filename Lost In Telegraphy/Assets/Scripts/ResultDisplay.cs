@@ -9,56 +9,73 @@ public class ResultDisplay : MonoBehaviour
     public TextMeshPro length;
     public TextMeshPro average;
 
+    private string genderAccuracyResult;
+    private string genderLengthResult;
+
+    private string ageAccuracyResult;
+    private string ageLengthResult;
+
+    private string ethnicityAccuracyResult;
+    private string ethnicityLengthResult;
+
+    private string politicalAlignmentAccuracyResult;
+    private string politicalAlignmentLengthResult;
+
     void Start()
     {
-        float genderAccuracyMax = 0;
-        float genderLengthMax = 0;
-        string genderAccuracyResult = "";
-        string genderLengthResult = "";
+        getScores();
 
-        getScores(0, genderAccuracyMax, genderLengthMax, genderAccuracyResult, genderLengthResult);
-
-        float ageAccuracyMax = 0;
-        float ageLengthMax = 0;
-        string ageAccuracyResult = "";
-        string ageLengthResult = "";
-
-        getScores(1, ageAccuracyMax, ageLengthMax, ageAccuracyResult, ageLengthResult);
-
-        float ethnicityAccuracyMax = 0;
-        float ethnicityLengthMax = 0;
-        string ethnicityAccuracyResult = "";
-        string ethnicityLengthResult = "";
-
-        getScores(2, ethnicityAccuracyMax, ethnicityLengthMax, ethnicityAccuracyResult, ethnicityLengthResult);
-
-        float politicalAlignmentAccuracyMax = 0;
-        float politicalAlignmentLengthMax = 0;
-        string politicalAlignmentAccuracyResult = "";
-        string politicalAlignmentLengthResult = "";
-
-        getScores(3, politicalAlignmentAccuracyMax, politicalAlignmentLengthMax, politicalAlignmentAccuracyResult, politicalAlignmentLengthResult);
+        Debug.Log("Gender: " + genderAccuracyResult + " Age: " + ageAccuracyResult + " Ethnicity: " + ethnicityAccuracyResult + " Political Alignment: " + politicalAlignmentAccuracyResult);
+        Debug.Log("Gender: " + genderLengthResult + " Age: " + ageLengthResult + " Ethnicity: " + ethnicityLengthResult + " Political Alignment: " + politicalAlignmentLengthResult);
 
         accuracy.text = "Gender: " + genderAccuracyResult + "\nAge: " + ageAccuracyResult + "\nEthnicity: " + ethnicityAccuracyResult + "\nPolitical Alignment: " + politicalAlignmentAccuracyResult;
         length.text = "Gender: " + genderLengthResult + "\nAge: " + ageLengthResult + "\nEthnicity: " + ethnicityLengthResult + "\nPolitical Alignment: " + politicalAlignmentLengthResult;
     }
 
-    void getScores(int identityElement, float acMax, float lnMax, string acRes, string lnRes)
+    void getScores()
     {
+        float acMax = 0;
+        string acRes = "";
+        float lnMax = 0;
+        string lnRes = "";
+
         int i;
-        for (i = 0; i < 5; i++)
+        for (i = 0; i < 4; i++)
         {
-            if (PaperMessages.accuracyScores[identityElement, i] > acMax)
+            int j;
+            for (j = 0; j < 5; j++)
             {
-                acMax = PaperMessages.accuracyScores[identityElement, i];
-                acRes = PaperMessages.senderInfo[identityElement, i];
+                if (PaperMessages.accuracyScores[i, j] >= acMax)
+                {
+                    acMax = PaperMessages.accuracyScores[i, j];
+                    acRes = PaperMessages.senderInfo[i, (int)acMax];
+                }
+
+                if (PaperMessages.lengthScores[i, j] >= lnMax)
+                {
+                    lnMax = PaperMessages.lengthScores[i, j];
+                    lnRes = PaperMessages.senderInfo[i, (int)lnMax];
+                }
             }
 
-            if (PaperMessages.lengthScores[identityElement, i] > lnMax)
+            switch (i)
             {
-                lnMax = PaperMessages.lengthScores[identityElement, i];
-                lnRes = PaperMessages.senderInfo[identityElement, i];
-
+                case 0:
+                    genderAccuracyResult = acRes;
+                    genderLengthResult = lnRes;
+                    break;
+                case 1:
+                    ageAccuracyResult = acRes;
+                    ageLengthResult = lnRes;
+                    break;
+                case 2:
+                    ethnicityAccuracyResult = acRes;
+                    ethnicityLengthResult = lnRes;
+                    break;
+                case 3:
+                    politicalAlignmentAccuracyResult = acRes;
+                    politicalAlignmentLengthResult = lnRes;
+                    break;
             }
         }
     }

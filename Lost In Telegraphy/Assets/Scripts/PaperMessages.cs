@@ -90,6 +90,14 @@ public class PaperMessages : MonoBehaviour
             "Genderfluid",
             "Other"
         },
+        //Age
+        {
+            "1 to 20",
+            "21 to 40",
+            "41 to 60",
+            "61 to 80",
+            "81 to 100"
+        },
         //Ethnicity
         {
             "White",
