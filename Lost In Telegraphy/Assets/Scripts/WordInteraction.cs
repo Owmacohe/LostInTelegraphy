@@ -130,7 +130,7 @@ public class WordInteraction : MonoBehaviour
     IEnumerator blockSlide()
     {
         float i;
-        for (i = this.transform.position.y; i < outLength; i = (i + 0.03f))
+        for (i = this.transform.position.y; i < outLength; i = (i + 0.1f))
         {
             this.transform.position = new Vector3(this.transform.position.x, i, this.transform.position.z);
             yield return new WaitForSeconds(0);

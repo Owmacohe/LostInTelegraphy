@@ -66,6 +66,11 @@ public class MessageCirculation : MonoBehaviour
     public static string infoEthnicity;
     public static string infoPoliticalAlignment;
 
+    public int accThreshholdInput;
+    public static int accThreshhold;
+    public int lenThreshholdInput;
+    public static int lenThreshhold;
+
     void Start()
     {
         //Starts the cycle
@@ -279,9 +284,9 @@ public class MessageCirculation : MonoBehaviour
         sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + infoGender + "\nAge: " + infoAge + "\nEthnicity: " + infoEthnicity + "\nPolitical Alignment: " + infoPoliticalAlignment;
 
         float i;
-        for (i = infoSheet.transform.position.y; i > 6.05f; i = (i - 0.02f))
+        for (i = infoSheet.transform.position.y; i > 6.05f; i = (i - 0.1f))
         {
-            infoSheet.transform.Translate(0, -0.02f, 0);
+			infoSheet.transform.position = new Vector3(infoSheet.transform.position.x, i, 0);
             yield return new WaitForSeconds(0);
         }
     }

@@ -31,7 +31,7 @@ public class PaperInteractionOut : MonoBehaviour
     IEnumerator paperOutSlide()
     {
         float i;
-        for (i = this.transform.position.x; i > 2.8; i = (i - 0.03f))
+        for (i = this.transform.position.x; i > 2.8; i = (i - 0.1f))
         {
             this.transform.position = new Vector3(i, this.transform.position.y, this.transform.position.z);
             yield return new WaitForSeconds(0);

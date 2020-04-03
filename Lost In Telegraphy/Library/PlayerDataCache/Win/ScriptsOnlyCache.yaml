@@ -5,8 +5,11 @@ ScriptsOnlyBuild:
     - MessageCirculation
     - PaperInteractionIn
     - PaperInteractionOut
+    - ResultDisplay
     - ScreenShift
     - TabClick
+    - TutorialOrder
+    - TutorialRead
     - WordInteraction
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -43,6 +46,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 33
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 50
@@ -52,21 +57,66 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11494}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 11532}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11944}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 11976}
+      Script: {instanceID: 11980}
     - Class: 114
-      Script: {instanceID: 12092}
+      Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 12476}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12604}
     - Class: 114
-      Script: {instanceID: 13066}
+      Script: {instanceID: 13072}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Results Screen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12420}
+    - Class: 114
+      Script: {instanceID: 12482}
+    - Class: 114
+      Script: {instanceID: 13072}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -107,17 +157,17 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11838}
+      Script: {instanceID: 11842}
     - Class: 114
-      Script: {instanceID: 11992}
+      Script: {instanceID: 11996}
     - Class: 114
-      Script: {instanceID: 12476}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12490}
+      Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12964}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 13080}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,6 +179,57 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Tutorial Screen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11346}
+    - Class: 114
+      Script: {instanceID: 11732}
+    - Class: 114
+      Script: {instanceID: 11996}
+    - Class: 114
+      Script: {instanceID: 12482}
+    - Class: 114
+      Script: {instanceID: 13072}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -179,6 +280,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 46d67dbeeb4a0d118ad2efbc863ea4ea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TutorialOrder
   - hash:
       serializedVersion: 2
       Hash: 499fd23433e68e265d153aa6b95d0047
@@ -241,7 +348,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 20b64e27a7b6c58f23fa7be01b1984f4
+      Hash: 8f9d47daf5b051f382879456ea6de811
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MessageCirculation
@@ -259,7 +366,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 909e218d9ed6c10f9e304f3caeaa8d22
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TabClick
@@ -299,6 +406,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 88d5deb8f80560741699e4495845a438
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TutorialRead
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -373,7 +486,7 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: 99131f2df325d957ae2c9071a1e0cc3a
+      Hash: 8742397a54248ceea9e0be5d1485a8a7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WordInteraction
@@ -473,6 +586,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 428d0f75940ebf40b2e201ba585ce650
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ResultDisplay
   - hash:
       serializedVersion: 2
       Hash: 11319334e5365797f8056694f9b5dae4
@@ -806,5 +925,7 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/Title Screen.unity
+  - Assets/Scenes/Tutorial Screen.unity
   - Assets/Scenes/Game Screen.unity
-  playerPath: C:/Users/Owen Hellum/Desktop/LiT/Lost In Telegraphy.exe
+  - Assets/Scenes/Results Screen.unity
+  playerPath: /Users/ohellum/Desktop/LiT/Lost In Telegraphy.exe

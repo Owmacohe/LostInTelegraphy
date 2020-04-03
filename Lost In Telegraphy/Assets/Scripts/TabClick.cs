@@ -9,9 +9,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TabClick : MonoBehaviour
 {
+    public Transform resultsPaper;
+
     private void OnMouseDown()
     {
         int correctCount = 0;
@@ -33,27 +36,28 @@ public class TabClick : MonoBehaviour
 
         float accPercentage = Mathf.Round(((float)correctCount / PaperInteractionIn.parts.Length) * 100);
 
-        if (accPercentage >= 70)
+        if (accPercentage >= MessageCirculation.accThreshhold)
         {
             doScores(PaperMessages.accuracyScores, accPercentage / 100);
         }
-        else if (accPercentage < 70)
+        else if (accPercentage < MessageCirculation.accThreshhold)
         {
             doScores(PaperMessages.accuracyScores, -(1 - (accPercentage / 100)));
         }
 
         float lenPercentage = Mathf.Round(((float)PaperInteractionOut.attatchedBlocks.Count / PaperInteractionIn.parts.Length) * 100);
 
-        if (lenPercentage >= 85)
+        if (lenPercentage >= MessageCirculation.lenThreshhold)
         {
             doScores(PaperMessages.lengthScores, lenPercentage / 100);
         }
-        else if (lenPercentage < 85)
+        else if (lenPercentage < MessageCirculation.lenThreshhold)
         {
             doScores(PaperMessages.lengthScores, -(1 - (lenPercentage / 100)));
         }
 
-        Debug.Log("Accuracy percentage: " + accPercentage + "%" + " Length percentage: " + lenPercentage + "%" + " /// " + PaperMessages.accuracyScores[1, 0] + " " + PaperMessages.accuracyScores[1, 1] + " " + PaperMessages.accuracyScores[1, 2] + " " + PaperMessages.accuracyScores[1, 3] + " " + PaperMessages.accuracyScores[1, 4]);
+        Debug.Log("Accuracy percentage: " + accPercentage + "%" + " Length percentage: " + lenPercentage + "%");
+        Debug.Log("Gender: " + PaperMessages.accuracyScores[0, 0] + " " + PaperMessages.accuracyScores[0, 1] + " " + PaperMessages.accuracyScores[0, 2] + " " + PaperMessages.accuracyScores[0, 3] + " " + PaperMessages.accuracyScores[0, 4] + " /// " + PaperMessages.lengthScores[0, 0] + " " + PaperMessages.lengthScores[0, 1] + " " + PaperMessages.lengthScores[0, 2] + " " + PaperMessages.lengthScores[0, 3] + " " + PaperMessages.lengthScores[0, 4]);
 
         MessageCirculation.tabSet("sent", "down");
         MessageCirculation.tabSet("send", "up");
@@ -73,6 +77,23 @@ public class TabClick : MonoBehaviour
         }
 
         MessageCirculation.infoSheet.transform.position = new Vector3(MessageCirculation.infoSheet.transform.position.x, 8.6f, 0);
+
+        if (MessageCirculation.messageCount >= 13)
+        {
+            StartCoroutine(slideResults());
+        }
+    }
+
+    IEnumerator slideResults()
+    {
+        float i;
+        for (i = resultsPaper.position.y; i > 0; i = (i - 0.1f))
+        {
+            resultsPaper.position = new Vector3(resultsPaper.position.x, i, 0);
+            yield return new WaitForSeconds(0);
+        }
+
+        SceneManager.LoadScene("Results Screen");
     }
 
     void doScores(float[,] scoreType, float changeType)
@@ -104,13 +125,13 @@ public class TabClick : MonoBehaviour
             case "21 to 40":
                 scoreType[1, 1] += changeType;
                 break;
-            case "40 to 61":
+            case "41 to 60":
                 scoreType[1, 2] += changeType;
                 break;
-            case "60 to 81":
+            case "61 to 80":
                 scoreType[1, 3] += changeType;
                 break;
-            case "80 to 100":
+            case "81 to 100":
                 scoreType[1, 4] += changeType;
                 break;
         }

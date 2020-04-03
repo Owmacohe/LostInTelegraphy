@@ -23,60 +23,92 @@ public class ResultDisplay : MonoBehaviour
 
     void Start()
     {
-        getScores();
-
-        Debug.Log("Gender: " + genderAccuracyResult + " Age: " + ageAccuracyResult + " Ethnicity: " + ethnicityAccuracyResult + " Political Alignment: " + politicalAlignmentAccuracyResult);
-        Debug.Log("Gender: " + genderLengthResult + " Age: " + ageLengthResult + " Ethnicity: " + ethnicityLengthResult + " Political Alignment: " + politicalAlignmentLengthResult);
-
-        accuracy.text = "Gender: " + genderAccuracyResult + "\nAge: " + ageAccuracyResult + "\nEthnicity: " + ethnicityAccuracyResult + "\nPolitical Alignment: " + politicalAlignmentAccuracyResult;
-        length.text = "Gender: " + genderLengthResult + "\nAge: " + ageLengthResult + "\nEthnicity: " + ethnicityLengthResult + "\nPolitical Alignment: " + politicalAlignmentLengthResult;
-    }
-
-    void getScores()
-    {
-        float acMax = 0;
-        string acRes = "";
-        float lnMax = 0;
-        string lnRes = "";
-
+        //Loop through 4 identity elements
         int i;
         for (i = 0; i < 4; i++)
         {
+            float acMax = 0;
+            string acResult = "";
+            float lnMax = 0;
+            string lnResult = "";
+
+            //Loop through 5 identity element possibilities
             int j;
             for (j = 0; j < 5; j++)
             {
                 if (PaperMessages.accuracyScores[i, j] >= acMax)
                 {
                     acMax = PaperMessages.accuracyScores[i, j];
-                    acRes = PaperMessages.senderInfo[i, (int)acMax];
+                    acResult = PaperMessages.senderInfo[i, j];
                 }
 
                 if (PaperMessages.lengthScores[i, j] >= lnMax)
                 {
                     lnMax = PaperMessages.lengthScores[i, j];
-                    lnRes = PaperMessages.senderInfo[i, (int)lnMax];
+                    lnResult = PaperMessages.senderInfo[i, j];
                 }
             }
 
             switch (i)
             {
                 case 0:
-                    genderAccuracyResult = acRes;
-                    genderLengthResult = lnRes;
+                    genderAccuracyResult = acResult;
+                    genderLengthResult = lnResult;
                     break;
                 case 1:
-                    ageAccuracyResult = acRes;
-                    ageLengthResult = lnRes;
+                    ageAccuracyResult = acResult;
+                    ageLengthResult = lnResult;
                     break;
                 case 2:
-                    ethnicityAccuracyResult = acRes;
-                    ethnicityLengthResult = lnRes;
+                    ethnicityAccuracyResult = acResult;
+                    ethnicityLengthResult = lnResult;
                     break;
                 case 3:
-                    politicalAlignmentAccuracyResult = acRes;
-                    politicalAlignmentLengthResult = lnRes;
+                    politicalAlignmentAccuracyResult = acResult;
+                    politicalAlignmentLengthResult = lnResult;
                     break;
             }
         }
+
+        float genAvMax = 0;
+        float ageAvMax = 0;
+        float ethAvMax = 0;
+        float polAvMax = 0;
+        string genderAverage = "";
+        string ageAverage = "";
+        string ethnicityAverage = "";
+        string politicalAlignmentAverage = "";
+
+        int k;
+        for (k = 0; k < 5; k++)
+        {
+            if (PaperMessages.accuracyScores[0, k] + PaperMessages.lengthScores[0, k] >= genAvMax)
+            {
+                genAvMax = PaperMessages.accuracyScores[0, k] + PaperMessages.lengthScores[0, k];
+                genderAverage = PaperMessages.senderInfo[0, k];
+            }
+            else if (PaperMessages.accuracyScores[1, k] + PaperMessages.lengthScores[1, k] >= ageAvMax)
+            {
+                ageAvMax = PaperMessages.accuracyScores[1, k] + PaperMessages.lengthScores[1, k];
+                ageAverage = PaperMessages.senderInfo[1, k];
+            }
+            else if (PaperMessages.accuracyScores[2, k] + PaperMessages.lengthScores[2, k] >= ethAvMax)
+            {
+                ethAvMax = PaperMessages.accuracyScores[2, k] + PaperMessages.lengthScores[2, k];
+                ethnicityAverage = PaperMessages.senderInfo[2, k];
+            }
+            else if (PaperMessages.accuracyScores[3, k] + PaperMessages.lengthScores[3, k] >= polAvMax)
+            {
+                polAvMax = PaperMessages.accuracyScores[3, k] + PaperMessages.lengthScores[3, k];
+                politicalAlignmentAverage = PaperMessages.senderInfo[3, k];
+            }
+        }
+
+        //Debug.Log("Gender: " + genderAccuracyResult + " Age: " + ageAccuracyResult + " Ethnicity: " + ethnicityAccuracyResult + " Political Alignment: " + politicalAlignmentAccuracyResult);
+        //Debug.Log("Gender: " + genderLengthResult + " Age: " + ageLengthResult + " Ethnicity: " + ethnicityLengthResult + " Political Alignment: " + politicalAlignmentLengthResult);
+
+        accuracy.text = "Gender: " + genderAccuracyResult + "\nAge: " + ageAccuracyResult + "\nEthnicity: " + ethnicityAccuracyResult + "\nPolitical Alignment: " + politicalAlignmentAccuracyResult;
+        length.text = "Gender: " + genderLengthResult + "\nAge: " + ageLengthResult + "\nEthnicity: " + ethnicityLengthResult + "\nPolitical Alignment: " + politicalAlignmentLengthResult;
+        average.text = "Gender: " + genderAverage + "\nAge: " + ageAverage + "\nEthnicity: " + ethnicityAverage + "\nPolitical Alignment: " + politicalAlignmentAverage;
     }
 }
