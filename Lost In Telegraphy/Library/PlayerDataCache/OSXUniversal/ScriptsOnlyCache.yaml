@@ -348,7 +348,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 8f9d47daf5b051f382879456ea6de811
+      Hash: b4fbfb1aef80dc286d7ba0fb7b3d5d1c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MessageCirculation

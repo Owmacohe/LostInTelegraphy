@@ -19,6 +19,7 @@ public class TabClick : MonoBehaviour
     {
         int correctCount = 0;
 
+        //Finds out how many correct words were in the message when sent
         int i;
         for (i = 0; i < PaperInteractionOut.attatchedBlocks.Count; i++)
         {
@@ -27,12 +28,12 @@ public class TabClick : MonoBehaviour
             {
                 if (PaperInteractionOut.attatchedBlocks[i].GetComponentInChildren<TextMeshPro>().text == PaperInteractionIn.parts[j])
                 {
-                    //Debug.Log("Correct word: " + PaperInteractionIn.parts[j]);
-
                     correctCount++;
                 }
             }
         }
+
+        //Gets the accuracy and length percentages of the sent message, and adjusts all scores for the sender's identity elements
 
         float accPercentage = Mathf.Round(((float)correctCount / PaperInteractionIn.parts.Length) * 100);
 
@@ -57,7 +58,7 @@ public class TabClick : MonoBehaviour
         }
 
         Debug.Log("Accuracy percentage: " + accPercentage + "%" + " Length percentage: " + lenPercentage + "%");
-        Debug.Log("Gender: " + PaperMessages.accuracyScores[0, 0] + " " + PaperMessages.accuracyScores[0, 1] + " " + PaperMessages.accuracyScores[0, 2] + " " + PaperMessages.accuracyScores[0, 3] + " " + PaperMessages.accuracyScores[0, 4] + " /// " + PaperMessages.lengthScores[0, 0] + " " + PaperMessages.lengthScores[0, 1] + " " + PaperMessages.lengthScores[0, 2] + " " + PaperMessages.lengthScores[0, 3] + " " + PaperMessages.lengthScores[0, 4]);
+        //Debug.Log("Gender: " + PaperMessages.accuracyScores[0, 0] + " " + PaperMessages.accuracyScores[0, 1] + " " + PaperMessages.accuracyScores[0, 2] + " " + PaperMessages.accuracyScores[0, 3] + " " + PaperMessages.accuracyScores[0, 4] + " /// " + PaperMessages.lengthScores[0, 0] + " " + PaperMessages.lengthScores[0, 1] + " " + PaperMessages.lengthScores[0, 2] + " " + PaperMessages.lengthScores[0, 3] + " " + PaperMessages.lengthScores[0, 4]);
 
         MessageCirculation.tabSet("sent", "down");
         MessageCirculation.tabSet("send", "up");
@@ -84,6 +85,7 @@ public class TabClick : MonoBehaviour
         }
     }
 
+    //Cosmetic IEnumerator to go to the next scene (results)
     IEnumerator slideResults()
     {
         float i;
@@ -96,6 +98,7 @@ public class TabClick : MonoBehaviour
         SceneManager.LoadScene("Results Screen");
     }
 
+    //Sets the values of given idenity element possibilities up or down based on the kind (accuracy or length), and the amount (+ or -)
     void doScores(float[,] scoreType, float changeType)
     {
         switch (MessageCirculation.infoGender)

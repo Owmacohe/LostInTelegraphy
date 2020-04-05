@@ -116,6 +116,7 @@ public class PaperMessages : MonoBehaviour
         }
     };
 
+    //Casual
     public static string[] casualMessages = {
         "Remember to buy apples when you're out",
         "Can you send me a list of your favourite songs?",
@@ -127,6 +128,7 @@ public class PaperMessages : MonoBehaviour
         "Could I come by and borrow some sugar tomorrow?"
     };
 
+    //Serious
     public static string[] seriousMessages = {
         "The next union meeting is tomorrow evening",
         "Have you been going to church lately?",
@@ -138,6 +140,7 @@ public class PaperMessages : MonoBehaviour
         "How many times have I told you not to let your kid cross my lawn?"
     };
 
+    //Dire
     public static string[] direMessages = {
         "The embassy is the next target, be prepared",
         "How many of the 'goods' were you able to secure?",

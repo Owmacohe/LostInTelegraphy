@@ -1299,6 +1299,7 @@ MonoBehaviour:
   blockInstantiatorInput: {fileID: 1073841048}
   paperOutInput: {fileID: 1352350387116174237, guid: 739ea622b4f25c7428c79cec5063960f,
     type: 3}
+  messageCountInput: 1
   infoSheetInput: {fileID: 726230074}
   sheetTitle: {fileID: 668542944}
   sheetInfoInput: {fileID: 899940276}

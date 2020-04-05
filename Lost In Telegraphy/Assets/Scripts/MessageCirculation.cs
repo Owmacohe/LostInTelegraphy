@@ -51,7 +51,8 @@ public class MessageCirculation : MonoBehaviour
     public static GameObject paperOut;
 
     //Seriousness level
-    public static int messageCount = 11;
+    public int messageCountInput;
+    public static int messageCount;
 
     public GameObject infoSheetInput;
     public static GameObject infoSheet;
@@ -91,6 +92,11 @@ public class MessageCirculation : MonoBehaviour
 
         sheetTitle.GetComponent<MeshRenderer>().sortingOrder = 4;
         sheetInfo.GetComponent<MeshRenderer>().sortingOrder = 4;
+
+        messageCount = messageCountInput;
+
+        accThreshhold = accThreshholdInput;
+        lenThreshhold = lenThreshholdInput;
     }
 
     private void newMessage()
@@ -274,6 +280,7 @@ public class MessageCirculation : MonoBehaviour
         instPaperOutSprite = instPaperOut.GetComponent<SpriteRenderer>().sprite;
     }
 
+    //Slides down and presents randomly genderated identity info for the message's sender
     public static IEnumerator slideInfoSheet()
     {
         infoGender = PaperMessages.senderInfo[0, Random.Range(0, 5)];
@@ -281,7 +288,7 @@ public class MessageCirculation : MonoBehaviour
         infoEthnicity = PaperMessages.senderInfo[2, Random.Range(0, 5)];
         infoPoliticalAlignment = PaperMessages.senderInfo[3, Random.Range(0, 5)];
 
-        sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + infoGender + "\nAge: " + infoAge + "\nEthnicity: " + infoEthnicity + "\nPolitical Alignment: " + infoPoliticalAlignment;
+        sheetInfo.GetComponent<TextMeshPro>().text = "Gender: " + infoGender + "\nAge: " + infoAge + "\nRace: " + infoEthnicity + "\nPolitical Alignment: " + infoPoliticalAlignment;
 
         float i;
         for (i = infoSheet.transform.position.y; i > 6.05f; i = (i - 0.1f))

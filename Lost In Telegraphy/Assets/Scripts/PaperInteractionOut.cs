@@ -13,6 +13,7 @@ public class PaperInteractionOut : MonoBehaviour
 {
     //private bool paperSelected = false;
 
+    //A list of all the wordblocks currently attatched to the outpaper
     public static List<GameObject> attatchedBlocks = new List<GameObject>();
 
     private void Start()

@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scripts\PaperMessages.cs" />
     <Compile Include="Assets\Scripts\ResultDisplay.cs" />
     <Compile Include="Assets\Scripts\ScreenShift.cs" />
-    <Compile Include="Assets\Scripts\SlotCheck.cs" />
     <Compile Include="Assets\Scripts\TabClick.cs" />
     <Compile Include="Assets\Scripts\TutorialOrder.cs" />
     <Compile Include="Assets\Scripts\TutorialRead.cs" />
