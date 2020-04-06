@@ -3,6 +3,7 @@
  Project for my COMS 360 and LING 300 classes
 
  Check out the documentation here: https://bit.ly/LostInTelegraphy
+ View it on my website: https://owmacohe.github.io/games.html
  */
 
 using System.Collections;
@@ -31,18 +32,21 @@ public class PaperInteractionIn : MonoBehaviour
         //Determines what kind of message will be outputted: casual, serious, or dire
         if (MessageCirculation.messageCount >= 1 && MessageCirculation.messageCount < 5)
         {
-            randomMessage = Random.Range(0, PaperMessages.casualMessages.Length);
+            randomMessage = Random.Range(0, PaperMessages.casualMessages.Count);
             messageText.text = PaperMessages.casualMessages[randomMessage];
+            PaperMessages.casualMessages.Remove(PaperMessages.casualMessages[randomMessage]);
         }
         else if (MessageCirculation.messageCount >= 5 && MessageCirculation.messageCount < 9)
         {
-            randomMessage = Random.Range(0, PaperMessages.seriousMessages.Length);
+            randomMessage = Random.Range(0, PaperMessages.seriousMessages.Count);
             messageText.text = PaperMessages.seriousMessages[randomMessage];
+            PaperMessages.seriousMessages.Remove(PaperMessages.seriousMessages[randomMessage]);
         }
         else if (MessageCirculation.messageCount >= 9 && MessageCirculation.messageCount < 13)
         {
-            randomMessage = Random.Range(0, PaperMessages.direMessages.Length);
+            randomMessage = Random.Range(0, PaperMessages.direMessages.Count);
             messageText.text = PaperMessages.direMessages[randomMessage];
+            PaperMessages.direMessages.Remove(PaperMessages.direMessages[randomMessage]);
         }
 
         sentence = messageText.text;

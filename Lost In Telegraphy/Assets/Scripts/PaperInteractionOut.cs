@@ -3,6 +3,7 @@
  Project for my COMS 360 and LING 300 classes
 
  Check out the documentation here: https://bit.ly/LostInTelegraphy
+ View it on my website: https://owmacohe.github.io/games.html
  */
 
 using System.Collections;
@@ -14,7 +15,7 @@ public class PaperInteractionOut : MonoBehaviour
     //private bool paperSelected = false;
 
     //A list of all the wordblocks currently attatched to the outpaper
-    public static List<GameObject> attatchedBlocks = new List<GameObject>();
+    public static List<GameObject> attatchedBlocks;
 
     private void Start()
     {

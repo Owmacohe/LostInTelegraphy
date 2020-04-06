@@ -3,6 +3,7 @@
  Project for my COMS 360 and LING 300 classes
 
  Check out the documentation here: https://bit.ly/LostInTelegraphy
+ View it on my website: https://owmacohe.github.io/games.html
  */
 
 using System.Collections;
@@ -17,20 +18,20 @@ public class ResultDisplay : MonoBehaviour
     public TextMeshPro length;
     public TextMeshPro average;
 
-    private string genderAccuracyResult;
-    private string genderLengthResult;
-
-    private string ageAccuracyResult;
-    private string ageLengthResult;
-
-    private string ethnicityAccuracyResult;
-    private string ethnicityLengthResult;
-
-    private string politicalAlignmentAccuracyResult;
-    private string politicalAlignmentLengthResult;
-
     void Start()
     {
+        string genderAccuracyResult = "";
+        string genderLengthResult = "";
+
+        string ageAccuracyResult = "";
+        string ageLengthResult = "";
+
+        string ethnicityAccuracyResult = "";
+        string ethnicityLengthResult = "";
+
+        string politicalAlignmentAccuracyResult = "";
+        string politicalAlignmentLengthResult = "";
+
         //Loop through 4 identity elements
         int i;
         for (i = 0; i < 4; i++)

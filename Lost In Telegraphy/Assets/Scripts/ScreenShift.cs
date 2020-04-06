@@ -3,6 +3,7 @@
  Project for my COMS 360 and LING 300 classes
 
  Check out the documentation here: https://bit.ly/LostInTelegraphy
+ View it on my website: https://owmacohe.github.io/games.html
  */
 
 using System.Collections;
