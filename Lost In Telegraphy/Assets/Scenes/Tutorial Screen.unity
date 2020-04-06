@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9040832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: -10, z: 0}
+  m_LocalPosition: {x: -0.9, y: -12, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -525,11 +525,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1443217823}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.9, y: -7.5}
+  m_AnchoredPosition: {x: -0.9, y: -10}
   m_SizeDelta: {x: 13, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &442643187
@@ -1078,19 +1078,18 @@ MonoBehaviour:
     As an agent of communication, your job is to preserve a message''s meaning, even
     if it may not fit the original sender''s exact words. Use your own judgement,
     history, biases, and common sense to decide how you may want to copy an incoming
-    telegraph.
+    telegraph. It''s important to be authentic to a message, but what are your own
+    limits when ethical complications are involved? Is it reasonable to leave a hateful
+    or inflamatory message unaltered?
 
 
-    Before, during, and after playing, try to think of how your
-    power in the game might mirror someone in our world, and in our time. Lost In
-    Telegraphy has no consequences for an ''incorrectly'' recopied message, and your
-    own personal morals are your guide. How might this parallel someone or something
-    working in a translation and representation position today? How much does bias
-    factor into translation when we are aware of the sender''s age, gender, ethnicity,
-    sexual orientation, etc?
-
-
-'
+    Before, during, and after playing, try
+    to think of how your power in the game might mirror someone in our world, and
+    in our time. Lost In Telegraphy has no consequences for an ''incorrectly'' recopied
+    message, and your own personal morals are your guide. How might this parallel
+    someone or something working in a translation and representation position today?
+    How much does bias factor into translation when we are aware of the sender''s
+    age, gender, ethnicity, sexual orientation, etc?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3e542538ed24cc88e35b173a5394ff, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: db3e542538ed24cc88e35b173a5394ff, type: 2}
@@ -1135,7 +1134,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 1389
+  m_firstOverflowCharacterIndex: 1365
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1159,12 +1158,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.0026803017}
   m_textInfo:
     textComponent: {fileID: 1425585204}
-    characterCount: 1512
+    characterCount: 1695
     spriteCount: 0
-    spaceCount: 246
-    wordCount: 242
+    spaceCount: 274
+    wordCount: 272
     linkCount: 0
-    lineCount: 26
+    lineCount: 28
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1249,7 +1248,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1443217823}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1283,8 +1282,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1425585208}
   - {fileID: 427156959}
+  - {fileID: 1425585208}
   m_Father: {fileID: 1061596455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

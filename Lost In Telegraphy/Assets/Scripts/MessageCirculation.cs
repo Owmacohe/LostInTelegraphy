@@ -247,20 +247,21 @@ public class MessageCirculation : MonoBehaviour
                 {
                     //Debug.Log("found synonym for: " + block.GetComponentInChildren<TextMeshPro>().text);
 
-                    addSynonyms(j);
+                    addSynonyms(j, Random.Range(2, 4));
                 }
             }
         }
     }
 
     //Adds a random number of synonyms pertaining to a select few words in the message
-    public static void addSynonyms(int wordSelection)
+    public static void addSynonyms(int wordSelection, int synNum)
     {
-        block.GetComponentInChildren<TextMeshPro>().text = PaperMessages.synonyms[wordSelection, Random.Range(1, 7)];
-
-        Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
-
-        //Debug.Log("added synonym: " + COMSmessages.synonyms[wordSelection, rand]);
+        int i;
+        for (i = 0; i < synNum; i++)
+        {
+            block.GetComponentInChildren<TextMeshPro>().text = PaperMessages.synonyms[wordSelection, Random.Range(1, 7)];
+            Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
+        }
     }
 
     public static void addRandomBlocks(int addNum)

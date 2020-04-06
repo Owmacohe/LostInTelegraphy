@@ -1490,4 +1490,4 @@ MonoBehaviour:
   text3: {fileID: 331677747}
   text4: {fileID: 739126310}
   text5: {fileID: 1279025421}
-  speed: 0.1
+  speed: 0.01

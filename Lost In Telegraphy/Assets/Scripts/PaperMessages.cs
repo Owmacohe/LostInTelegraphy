@@ -117,44 +117,6 @@ public class PaperMessages : MonoBehaviour
         }
     };
 
-    /*
-    //Casual
-    public static string[] casualMessages = {
-        "Remember to buy apples when you're out",
-        "Can you send me a list of your favourite songs?",
-        "Please come see me in my office this Tuesday",
-        "When will you be visiting next?",
-        "I hope you and your family are doing well",
-        "How can I contact your work?",
-        "The price of cheese at the store has gone up",
-        "Could I come by and borrow some sugar tomorrow?"
-    };
-
-    //Serious
-    public static string[] seriousMessages = {
-        "The next union meeting is tomorrow evening",
-        "Have you been going to church lately?",
-        "I'm not really a fan of the new government",
-        "How many job notices do you intend to put up?",
-        "I suggest you invest in coal industry stock",
-        "Has your new factory job been keeping you busy?",
-        "I would like to register in the journalism class",
-        "How many times have I told you not to let your kid cross my lawn?"
-    };
-
-    //Dire
-    public static string[] direMessages = {
-        "The embassy is the next target, be prepared",
-        "How many of the 'goods' were you able to secure?",
-        "The bar down the street just opened up its first womens' only evening",
-        "Where will the opposition party be having its headquarters?",
-        "I'll be putting on my first counter-culture art show tomorrow",
-        "I wonder if other countries have similar problems?",
-        "It's very important to be an armed citizen",
-        "When do you have time to organize the next protest?"
-    };
-    */
-
     //Casual
     public static List<string> casualMessages = new List<string>(new string[] {
         "Remember to buy apples when you're out",
@@ -660,7 +622,7 @@ public class PaperMessages : MonoBehaviour
         }
     };
 
-    public static string[] randomWords = new string[]
+    public static string[] randomWords =
     {
         "now",
         "cut",

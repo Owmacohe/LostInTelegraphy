@@ -60,7 +60,7 @@ public class PaperInteractionIn : MonoBehaviour
     {
         if (acknowledged == false)
         {
-            MessageCirculation.addRandomBlocks(Random.Range(0, (parts.Length / 2)));
+            MessageCirculation.addRandomBlocks(Random.Range(1, (int)(parts.Length / 1.5)));
 
             MessageCirculation.addBlocks(parts.Length);
             MessageCirculation.addPaperOut();
