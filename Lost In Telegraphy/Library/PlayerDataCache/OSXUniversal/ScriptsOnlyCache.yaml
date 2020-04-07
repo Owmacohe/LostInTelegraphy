@@ -58,13 +58,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11472}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13082}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -107,21 +107,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11504}
     - Class: 114
-      Script: {instanceID: 11610}
+      Script: {instanceID: 11542}
     - Class: 114
-      Script: {instanceID: 12022}
+      Script: {instanceID: 11954}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 11986}
     - Class: 114
-      Script: {instanceID: 12172}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12614}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13082}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -164,13 +164,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12496}
+      Script: {instanceID: 12428}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13082}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -211,17 +211,17 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11916}
+      Script: {instanceID: 11848}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12504}
     - Class: 114
-      Script: {instanceID: 13042}
+      Script: {instanceID: 12974}
     - Class: 114
-      Script: {instanceID: 13158}
+      Script: {instanceID: 13090}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -260,15 +260,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11420}
+      Script: {instanceID: 11352}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13082}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -983,4 +983,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Game Screen.unity
   - Assets/Scenes/Results Screen.unity
   - Assets/Scenes/Credits.unity
-  playerPath: /Users/ohellum/Desktop/Lost in Telegraphy.app
+  playerPath: /Users/ohellum/Documents/GitHub/LostInTelegraphy/Lost In Telegraphy/Build/Lost
+    in Telegraphy.app

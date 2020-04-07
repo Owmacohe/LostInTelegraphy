@@ -236,21 +236,32 @@ public class MessageCirculation : MonoBehaviour
             //Instantiates all the block words of the words in the incoming message
             block.GetComponentInChildren<TextMeshPro>().text = PaperInteractionIn.parts[i];
 
-            Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
-
-            //Debug.Log(i + ": " + PaperInteractionIn.parts[i]);
+            GameObject newBlock = Instantiate(block, new Vector2(Random.Range(-4.8f, 0f), blockInstantiator.transform.position.y), Quaternion.identity);
 
             int j;
             for (j = 0; j < (PaperMessages.synonyms.Length / 7); j++)
             {
                 if (block.GetComponentInChildren<TextMeshPro>().text == PaperMessages.synonyms[j, 0])
                 {
-                    //Debug.Log("found synonym for: " + block.GetComponentInChildren<TextMeshPro>().text);
+                    //Debug.Log("found synonym(s) for: " + block.GetComponentInChildren<TextMeshPro>().text);
 
                     addSynonyms(j, Random.Range(2, 4));
+
+                    //Chance to destroy a block that has a synonym after its synonym has been created
+                    if (Random.Range(0, 4) == 0)
+                    {
+                        //Debug.Log("detroyed " + newBlock.GetComponentInChildren<TextMeshPro>().text);
+                        Destroy(newBlock, 0);
+                    }
                 }
             }
         }
+
+        //Removed chance to destroy a random word block, not necessarily a block with a synonym
+        /*
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("WordBlock");
+        Destroy(blocks[Random.Range(0, blocks.Length)], 0);
+        */
     }
 
     //Adds a random number of synonyms pertaining to a select few words in the message

@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{32DB78E9-7BE3-4CB6-0E75-E845DFCFEB8A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CreditsOrder.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialOrder.cs">
     <Files>
       <File FileName="Assets/Scripts/CreditsOrder.cs" Line="7" Column="4" />
-      <File FileName="Assets/Scripts/MenuButton.cs" />
-      <File FileName="Assets/Scripts/MessageCirculation.cs" Line="250" Column="56" />
+      <File FileName="Assets/Scripts/MenuButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MessageCirculation.cs" Line="253" Column="27" />
       <File FileName="Assets/Scripts/PaperInteractionIn.cs" Line="73" Column="56" />
-      <File FileName="Assets/Scripts/PaperInteractionOut.cs" Line="41" Column="1" />
-      <File FileName="Assets/Scripts/PaperMessages.cs" Line="118" Column="7" />
-      <File FileName="Assets/Scripts/ResultDisplay.cs" Line="66" Column="51" />
+      <File FileName="Assets/Scripts/PaperInteractionOut.cs" Line="17" Column="34" />
+      <File FileName="Assets/Scripts/PaperMessages.cs" />
+      <File FileName="Assets/Scripts/ResultDisplay.cs" />
       <File FileName="Assets/Scripts/ScreenShift.cs" />
-      <File FileName="Assets/Scripts/TabClick.cs" />
-      <File FileName="Assets/Scripts/TutorialOrder.cs" />
+      <File FileName="Assets/Scripts/TabClick.cs" Line="68" Column="1" />
+      <File FileName="Assets/Scripts/TutorialOrder.cs" Line="17" Column="44" />
       <File FileName="Assets/Scripts/WordInteraction.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7b09cbca-3795-451a-81d6-67f6d7193b87" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="448ce680-6d88-4705-9a6c-c78ce7cac128" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

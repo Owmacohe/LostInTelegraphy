@@ -1,1 +1,1 @@
-# Two similar games for my Mass Media and Intro to Sociolinguistics classes, focusing on mass media influence through translation and translator bias, respectively
+# A game for my Mass Media and Intro to Sociolinguistics classes, focusing on mass media influence through translation and translator bias. You play as a telegraph booth officer receiving, copying, and transmitting messages along the telegraph system.
